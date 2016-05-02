@@ -1,4 +1,4 @@
-(defproject hydro-evolution "0.1.0-SNAPSHOT"
+(defproject hydrofoil "0.1.0-SNAPSHOT"
   :description "FIXME: write description"
   :url "http://example.com/FIXME"
   :license {:name "Eclipse Public License"
@@ -6,4 +6,4 @@
   :dependencies [[org.clojure/clojure "1.7.0"]
                  [expectations "2.1.8"]]
   :plugins [[lein-autoexpect "1.0"]]
-   :main hydrofoil.core)
+  :main hydrofoil.core)
