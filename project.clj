@@ -6,4 +6,4 @@
   :dependencies [[org.clojure/clojure "1.7.0"]
                  [expectations "2.1.8"]]
   :plugins [[lein-autoexpect "1.0"]]
-   :main hydrofoil-evolution.core)
+   :main hydrofoil.core)
