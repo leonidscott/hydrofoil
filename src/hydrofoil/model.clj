@@ -39,10 +39,10 @@
     (* (/ (* 2 max-camber) (Math/pow position-camber 2)) (- position-camber x)) ;;; (2M/P^2)(P-x)
     (* (/ (* 2 max-camber) (Math/pow (- 1 position-camber) 2)) (- position-camber x)))) ;;; (2M/(1-P)^2)(P-x)
 
-(defn upper-surface-x-function
-  "takes an x  and gives an x coordinate on the paremetric upper-surface-x-function
-  (theta =  atan(G)), x - thickness-function * sin(theta)."
-  [x thickess]
-  (- x (* (thickness-function thickess x)
-          (Math/sin (FILL IN STUFF)))))
+;;(defn upper-surface-x-function
+;;  "takes an x  and gives an x coordinate on the paremetric upper-surface-x-function
+;;  (theta =  atan(G)), x - thickness-function * sin(theta)."
+;;  [x thickess]
+;;  (- x (* (thickness-function thickess x)
+;;          (Math/sin (FILL IN STUFF)))))
 
