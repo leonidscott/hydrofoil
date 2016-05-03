@@ -13,12 +13,12 @@
         a-4 -0.1036]
         (* (/ (individual :corrected-thickness) 0.2)
            (+ (* a-0 (Math/sqrt x))
-              (Math/pow a-1 x)
+              (* a-1 x)
               (* a-2 (Math/pow x 2))
               (* a-3 (Math/pow x 3))
               (* a-4 (Math/pow x 4))))))
 
-(thickness-function (hash-map :corrected-thickness 2) 2)
+(thickness-function (hash-map :corrected-thickness 40) 0)
 
 (defn camber-function
   "Takes in a corrected maxiumum camber, corrected camber position, and an x value.
@@ -38,6 +38,12 @@
   (if (and (> x 0) (< x position-camber))
     (* (/ (* 2 max-camber) (Math/pow position-camber 2)) (- position-camber x)) ;;; (2M/P^2)(P-x)
     (* (/ (* 2 max-camber) (Math/pow (- 1 position-camber) 2)) (- position-camber x)))) ;;; (2M/(1-P)^2)(P-x)
+
+(defn round-double
+  "Takes a double and returns a double with two points of accuracy"
+  [n]
+  (double (/ (int (+ (* n 10000) 0.5)) 10000)))
+
 
 ;;(defn upper-surface-x-function
 ;;  "takes an x  and gives an x coordinate on the paremetric upper-surface-x-function
