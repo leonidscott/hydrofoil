@@ -48,7 +48,7 @@
     (* (/ (* 2 max-camber) (Math/pow (- 1 position-camber) 2)) (- position-camber x)))) ;;; (2M/(1-P)^2)(P-x)
 
 (defn round-double
-  "Takes a double and returns a double with two points of accuracy"
+  "Takes a double and returns a double with four points of accuracy"
   [n]
   (double (/ (int (+ (* n 10000) 0.5)) 10000)))
 
