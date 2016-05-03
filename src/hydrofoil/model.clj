@@ -4,7 +4,8 @@
 
 (defn thickness-function
   "Take a corrected thickness and returns the function of thickess around the camber line.
-  The thickness equation is (T/.2)(a-0x^.5 + a-1x + a-2x^2 + a-3x^3 + a-4x^4)"
+  The thickness equation is (T/.2)(a-0x^.5 + a-1x + a-2x^2 + a-3x^3 + a-4x^4)
+  NOTE: Does not work for x = 1"
   [individual x]
   (let [a-0 0.2969
         a-1 -0.126
@@ -23,7 +24,8 @@
 (defn camber-function
   "Takes in a corrected maxiumum camber, corrected camber position, and an x value.
     Returns the y-coordinate of the camber at that x value. The camber equations are
-  (2M/P^2)(2Px - x^2) for {0 <= x < p}, and (2M/(1-P)^2)(1 - 2P + 2Px -x^2) for {p <= x < 1}"
+  (2M/P^2)(2Px - x^2) for {0 <= x < p}, and (2M/(1-P)^2)(1 - 2P + 2Px -x^2) for {p <= x < 1}
+  NOTE: Does not work for P = 0"
   [individual x]
   (if (and (> x 0) (< x (individual :corrected-position-camber)))
       (* (/ (individual :corrected-max-camber)
