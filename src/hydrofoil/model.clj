@@ -27,7 +27,7 @@
   (2M/P^2)(2Px - x^2) for {0 <= x < p}, and (2M/(1-P)^2)(1 - 2P + 2Px -x^2) for {p <= x < 1}
   NOTE: Does not work for P = 0"
   [individual x]
-  (if (and (> x 0) (< x (individual :corrected-position-camber)))
+  (if (and (>= x 0) (< x (individual :corrected-position-camber)))
       (* (/ (individual :corrected-max-camber)
             (Math/pow (individual :corrected-position-camber) 2))
          (- (* 2 (individual :corrected-position-camber) x)
