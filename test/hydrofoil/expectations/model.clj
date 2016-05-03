@@ -32,3 +32,5 @@
 ;thickness 40:
 (expect 0.0
         (round-double (thickness-function (hash-map :corrected-thickness 0.4) 0.9999)))
+
+;;; --------- camber-function tests ------------

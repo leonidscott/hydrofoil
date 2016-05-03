@@ -24,11 +24,17 @@
   "Takes in a corrected maxiumum camber, corrected camber position, and an x value.
     Returns the y-coordinate of the camber at that x value. The camber equations are
   (2M/P^2)(2Px - x^2) for {0 <= x < p}, and (2M/(1-P)^2)(1 - 2P + 2Px -x^2) for {p <= x < 1}"
-  [max-camber position-camber x]
-  (if (and (> x 0) (< x position-camber))
-    (* (/ (* 2 max-camber) (Math/pow position-camber 2)) (- (* 2 position-camber x) (Math/pow x 2))) ;;; (2M/P^2)(2Px - x^2)
-    (* (/ (* 2 max-camber) (Math/pow (- 1 position-camber) 2))
-       (- (+ (- 1 (* 2 position-camber)) (* 2 position-camber x))) (Math/pow x 2)))) ;;; (2M/(1-P)^2)(1 - 2P + 2Px -x^2)
+  [individual x]
+  (if (and (> x 0) (< x (individual :corrected-position-camber)))
+      (* (/ (individual :corrected-max-camber)
+            (Math/pow (individual :corrected-position-camber) 2))
+         (- (* 2 (individual :corrected-position-camber) x)
+            (Math/pow x 2)))
+      (* (/ (individual :corrected-max-camber)
+            (Math/pow (- 1 (individual :corrected-position-camber)) 2))
+         (- (+ (- 1 (* 2 (individual :corrected-position-camber)))
+               (* 2 (individual :corrected-position-camber) x))
+            (Math/pow x 2)))))
 
 (defn gradient-function
   "Takes a corrected maximum camber, corrected camber position, and an x value.

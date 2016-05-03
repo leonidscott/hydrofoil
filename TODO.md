@@ -7,6 +7,10 @@
   * `lein test` will run all tests the way you would expect
   * **NOTE:** the testing framwork will break if there is any syntaxtical error anywhere in your code,
 not just the classes you are testing.
+* Got `thickness-function` tested
+  * **NOTE:** It does not work when `x = 1`
+* Re-wrote `camber-function` to take an individual
+  * **NOTE:** Use lets to define M, P, and T
 
 ##Model
 1. ~~Test `thickness-function`~~
