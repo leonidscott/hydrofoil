@@ -55,10 +55,33 @@
   (double (/ (int (+ (* n 10000) 0.5)) 10000)))
 
 
-;;(defn upper-surface-x-function
-;;  "takes an x  and gives an x coordinate on the paremetric upper-surface-x-function
-;;  (theta =  atan(G)), x - thickness-function * sin(theta)."
-;;  [x thickess]
-;;  (- x (* (thickness-function thickess x)
-;;          (Math/sin (FILL IN STUFF)))))
+(defn upper-surface-x-function
+  "takes an x  and gives an x coordinate on the paremetric upper-surface-x-function
+  (theta =  atan(G)), x - thickness-function * sin(theta)."
+  [x thickess]
+  (- x (* (thickness-function thickess x)
+          (Math/sin (Math/atan (gradient-function individual x))))))
 
+
+(defn lower-surface-x-function
+  "takes an x  and gives an x coordinate on the paremetric lower-surface-x-function
+  (theta =  atan(G)), x + thickness-function * sin(theta)."
+  [x thickess]
+  (+ x (* (thickness-function thickess x)
+          (Math/sin (Math/atan (gradient-function individual x))))))
+
+
+(defn upper-surface-y-function
+  "takes an x  and gives an y coordinate on the paremetric upper-surface-x-function
+  (theta =  atan(G)), camber-function + thickness-function * cos(theta)."
+  [x thickess]
+  (+ camber-function (* (thickness-function thickess x)
+          (Math/cos (Math/atan (gradient-function individual x))))))
+
+
+(defn lower-surface-y-function
+  "takes an x  and gives an y coordinate on the paremetric upper-surface-x-function
+  (theta =  atan(G)), camber-function - thickness-function * cos(theta)."
+  [x thickess]
+  (- camber-function (* (thickness-function thickess x)
+          (Math/cos (Math/atan (gradient-function individual x))))))
