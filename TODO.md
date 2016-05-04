@@ -18,26 +18,15 @@ not just the classes you are testing.
   * Expected: -0.0576, Was: -0.575
 
 ##Model
-1. ~~Test `thickness-function`~~
-2. ~~Test `camber-function`~~
-3. Test `gradient-function`
-4. ~~Figure out atan~~
-5. ~~Finish writing `upper-surface-x-function`~~
-6. Test `upper-surface-x-function`
-7. ~~Write `upper-surface-y-function`~~
-8. Test `upper-surface-y-function`
-9. ~~Write `lower-surface-x-function`~~
-10. Test `lower-surface-x-function`
-11. ~~Write `lower-surface-y-function`~~
-12. Test `lower-surface-y-function`
-13. ~~Change all functions to take an NACA Design and an x~~
-   * `thickness-function` finished
-   * `camber-function` finished
-   * `gradient-function` finished
-14. Figure out how to use Reimond Sum program from java
-15. Build Area Function
-16. Test CenterBox, Trapazoid, and Simpson Approaches to approximate integration
-17. Coefficient of lift stuff
+1. ~~Test `gradient-function`~~
+2. Test `upper-surface-x-function`
+3. Test `upper-surface-y-function`
+4. Test `lower-surface-x-function`
+5. Test `lower-surface-y-function`
+6. Figure out how to use Reimond Sum program from java
+7. Build Area Function
+8. Test CenterBox, Trapazoid, and Simpson Approaches to approximate integration
+9. Coefficient of lift stuff
 
 ##Evolution
 ##Core
