@@ -58,30 +58,34 @@
 (defn upper-surface-x-function
   "takes an x  and gives an x coordinate on the paremetric upper-surface-x-function
   (theta =  atan(G)), x - thickness-function * sin(theta)."
-  [x thickess]
-  (- x (* (thickness-function thickess x)
-          (Math/sin (Math/atan (gradient-function individual x))))))
+  [x individual]
+  (let [thickness (individual :corrected-thickness)]
+  (- x (* (thickness-function thickness x)
+          (Math/sin (Math/atan (gradient-function individual x)))))))
 
 
 (defn lower-surface-x-function
   "takes an x  and gives an x coordinate on the paremetric lower-surface-x-function
   (theta =  atan(G)), x + thickness-function * sin(theta)."
-  [x thickess]
-  (+ x (* (thickness-function thickess x)
-          (Math/sin (Math/atan (gradient-function individual x))))))
+  [x individual]
+  (let [thickness (individual :corrected-thickness)]
+  (+ x (* (thickness-function thickness x)
+          (Math/sin (Math/atan (gradient-function individual x)))))))
 
 
 (defn upper-surface-y-function
   "takes an x  and gives an y coordinate on the paremetric upper-surface-x-function
   (theta =  atan(G)), camber-function + thickness-function * cos(theta)."
-  [x thickess]
-  (+ camber-function (* (thickness-function thickess x)
-          (Math/cos (Math/atan (gradient-function individual x))))))
+  [x individual]
+  (let [thickness (individual :corrected-thickness)]
+  (+ camber-function (* (thickness-function thickness x)
+          (Math/cos (Math/atan (gradient-function individual x)))))))
 
 
 (defn lower-surface-y-function
   "takes an x  and gives an y coordinate on the paremetric upper-surface-x-function
   (theta =  atan(G)), camber-function - thickness-function * cos(theta)."
-  [x thickess]
-  (- camber-function (* (thickness-function thickess x)
-          (Math/cos (Math/atan (gradient-function individual x))))))
+  [x individual]
+  (let [thickness (individual :corrected-thickness)]
+  (- camber-function (* (thickness-function thickness x)
+          (Math/cos (Math/atan (gradient-function individual x)))))))
