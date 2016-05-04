@@ -19,11 +19,11 @@ not just the classes you are testing.
 4. Figure out atan
 5. Finish writing `upper-surface-x-function`
 6. Test `upper-surface-x-function`
-7. Write `upper-surface-y-function`
+7. ~~Write `upper-surface-y-function`~~
 8. Test `upper-surface-y-function`
-9. Write `lower-surface-x-function`
+9. ~~Write `lower-surface-x-function`~~
 10. Test `lower-surface-x-function`
-11. Write `lower-surface-y-function`
+11. ~~Write `lower-surface-y-function`~~
 12. Test `lower-surface-y-function`
 13. Change all functions to take an NACA Design and an x
    * `thickness-function` finished
