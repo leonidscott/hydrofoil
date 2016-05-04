@@ -25,9 +25,10 @@ not just the classes you are testing.
 10. Test `lower-surface-x-function`
 11. Write `lower-surface-y-function`
 12. Test `lower-surface-y-function`
-13. Change all functions to take an NACA Design and an x
+13. ~~Change all functions to take an NACA Design and an x~~
    * `thickness-function` finished
    * `camber-function` finished
+   * `gradient-function` finished
 14. Figure out how to use Reimond Sum program from java
 15. Build Area Function
 16. Test CenterBox, Trapazoid, and Simpson Approaches to approximate integration
