@@ -42,10 +42,12 @@
   "Takes a corrected maximum camber, corrected camber position, and an x value.
    Returns the camber gradient at that x value. The gradiant equations are
   (2M/P^2)(P-x) for {0 <= x < p}, and (2M/(1-P)^2)(P-x) for {p <= x <= 1}"
-  [max-camber position-camber x]
-  (if (and (> x 0) (< x position-camber))
-    (* (/ (* 2 max-camber) (Math/pow position-camber 2)) (- position-camber x)) ;;; (2M/P^2)(P-x)
-    (* (/ (* 2 max-camber) (Math/pow (- 1 position-camber) 2)) (- position-camber x)))) ;;; (2M/(1-P)^2)(P-x)
+  [individual x]
+  (let [position-camber (individual :corrected-position-camber)
+        max-camber (individual :corrected-max-camber)]
+    (if (and (> x 0) (< x position-camber))
+      (* (/ (* 2 max-camber) (Math/pow position-camber 2)) (- position-camber x)) ;;; (2M/P^2)(P-x)
+      (* (/ (* 2 max-camber) (Math/pow (- 1 position-camber) 2)) (- position-camber x))))) ;;; (2M/(1-P)^2)(P-x)
 
 (defn round-double
   "Takes a double and returns a double with four points of accuracy"

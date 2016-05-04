@@ -70,3 +70,5 @@
 ; M = 4.75| P = 9| x = .09
 (expect 0.0475
         (round-double (camber-function (NACA-design 4.75 9 12) 0.9)))
+
+;;; --------- gradient-function tests ------------
