@@ -16,8 +16,8 @@ not just the classes you are testing.
 1. ~~Test `thickness-function`~~
 2. ~~Test `camber-function`~~
 3. Test `gradient-function`
-4. Figure out atan
-5. Finish writing `upper-surface-x-function`
+4. ~~Figure out atan~~
+5. ~~Finish writing `upper-surface-x-function`~~
 6. Test `upper-surface-x-function`
 7. ~~Write `upper-surface-y-function`~~
 8. Test `upper-surface-y-function`
