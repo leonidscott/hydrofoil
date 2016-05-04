@@ -45,7 +45,7 @@
   [individual x]
   (let [position-camber (individual :corrected-position-camber)
         max-camber (individual :corrected-max-camber)]
-    (if (and (> x 0) (< x position-camber))
+    (if (and (>= x 0) (< x position-camber))
       (* (/ (* 2 max-camber) (Math/pow position-camber 2)) (- position-camber x)) ;;; (2M/P^2)(P-x)
       (* (/ (* 2 max-camber) (Math/pow (- 1 position-camber) 2)) (- position-camber x))))) ;;; (2M/(1-P)^2)(P-x)
 

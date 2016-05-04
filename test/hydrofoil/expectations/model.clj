@@ -85,7 +85,17 @@
         (round-double (gradient-function (NACA-design 9.5 45 12) 0.48)))
 
 ; M = 4.5| P = .0001| x = .64
-
+(expect -0.0576
+        (round-double (gradient-function (NACA-design 4.5 0.0001 12) 0.64)))
 
 ; M = 4.5| P = 90| x = .8
+(expect 0.0091
+        (round-double (gradient-function (NACA-design 4.5 90 12) 0.8)))
 
+; M = 4.5| P = 45| x = 0
+(expect 0.02
+        (round-double (gradient-function (NACA-design 4.5 45 12) 0.0)))
+
+; M = 4.5| P = 45| x = 1
+(expect 0.0156
+        (round-double (gradient-function (NACA-design 4.5 45 12) 1.0)))
