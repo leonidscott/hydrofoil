@@ -15,7 +15,7 @@ not just the classes you are testing.
 ##Bug Report
 * Rounding error in gradient-function:
   * M = 4.5 | P = .0001| T = 12| x = 0.64
-  * Expected: -0.0576, Was: -0.575
+  * Expected: -0.0576, Was: -0.0575
 
 ##Model
 1. ~~Test `gradient-function`~~
