@@ -72,3 +72,20 @@
         (round-double (camber-function (NACA-design 4.75 9 12) 0.9)))
 
 ;;; --------- gradient-function tests ------------
+; M = 0| P = 45| x = .5
+(expect 0.0
+        (round-double (gradient-function (NACA-design 0 45 12) 0.5)))
+
+; M = 4.75| P = 45| x =.32
+(expect 0.0196
+        (round-double (gradient-function (NACA-design 4.75 45 12) 0.32)))
+
+; M = 9.5| P = 45| x = .48
+(expect 0.0377
+        (round-double (gradient-function (NACA-design 9.5 45 12) 0.48)))
+
+; M = 4.5| P = .0001| x = .64
+
+
+; M = 4.5| P = 90| x = .8
+
