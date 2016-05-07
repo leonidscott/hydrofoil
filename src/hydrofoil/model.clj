@@ -89,3 +89,8 @@
   (let [thickness (individual :corrected-thickness)]
   (- camber-function (* (thickness-function thickness x)
           (Math/cos (Math/atan (gradient-function individual x)))))))
+
+
+(defn lift-function
+  []
+  MATH)
