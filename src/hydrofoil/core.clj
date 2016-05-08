@@ -1,6 +1,6 @@
 (ns hydrofoil.core
   (:require [hydrofoil.evolution :as evo]
-            [hydrofoil.model :as model]))
+            [hydrofoil.model :refer :all]))
 
 ;(defn -main [& args]
  ; (println (model/atan 1)))
@@ -14,7 +14,7 @@
 
 (defn generate-random-design
   []
-  (NACA-design (format "%.1f" (rand 9.5)) (format "%.1f" (rand 90)) (+ (format "%.1f" (rand 39)) 1)))
+  (NACA-design (round-double (rand 9.5)) (round-double (rand 90)) (+ (round-double (rand 39)) 1)))
 
 
 (defn random-change
@@ -36,6 +36,6 @@
 
 (defn change-max-camber
   []
-  (if (> (+ max-camber (rand 1)) 9.5) ))
+  (if (> (+ max-camber (round-double (rand 1))) 9.5) ))
 
 
