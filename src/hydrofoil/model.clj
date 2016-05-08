@@ -100,10 +100,18 @@
   (range 0 1 (/ 1 pieces)))
 
 (defn right-rule
-  "Creates a lazy seque of points to evaluate a function at for a left rule riemann sum
+  "Creates a lazy seque of points to evaluate a function at for a right rule riemann sum
   Takes a number of particians"
   [pieces]
   (range (/ 1 pieces) (+ (/ 1 pieces) 1) (/ 1 pieces)))
+
+(defn middle-rule
+  "Creates a lazy seque of points to evaluate a function at for a right middle riemann sum
+  Takes a number of particians"
+  [pieces]
+  (range (/ 1 (* 2 pieces))
+         1
+         (/ 1 pieces)))
 
 (defn riemann-sum-abstracted
   "Will do a riemann sum on the function:
@@ -116,9 +124,9 @@
   "same as riemann sum but if might be faster, you need to figure our left, right, middle
   functions on your own"
   [function start-x end-x increment pieces]
-  (reduce #(+ %1 (* (/ 1 pieces) (function %2))) 0 (range start end increment)))
+  (reduce #(+ %1 (* (/ 1 pieces) (function %2))) 0 (range start-x end-x increment)))
 
 ;;(defn lift-function
 ;;  [])
-(right-rule 4)
+
 

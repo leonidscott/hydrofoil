@@ -99,3 +99,4 @@
 ; M = 4.5| P = 45| x = 1
 (expect 0.0156
         (round-double (gradient-function (NACA-design 4.5 45 12) 1.0)))
+;;;-------- riemann-sum ----------
