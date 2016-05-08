@@ -2,6 +2,14 @@
   ;;(:require [clojure.algo.generic.math-functions :as trig])
   )
 
+;;---------------- Utilities ---------------
+(defn round-double
+  "Takes a double and returns a double with four points of accuracy"
+  [n]
+  (double (/ (int (+ (* n 10000) 0.5)) 10000)))
+
+
+;;---------------- NACA Functions ---------------
 (defn thickness-function
   "Take a corrected thickness and returns the function of thickess around the camber line.
   The thickness equation is (T/.2)(a-0x^.5 + a-1x + a-2x^2 + a-3x^3 + a-4x^4)
@@ -18,8 +26,6 @@
               (* a-2 (Math/pow x 2))
               (* a-3 (Math/pow x 3))
               (* a-4 (Math/pow x 4))))))
-
-(thickness-function (hash-map :corrected-thickness 40) 0)
 
 (defn camber-function
   "Takes in a corrected maxiumum camber, corrected camber position, and an x value.
@@ -49,18 +55,13 @@
       (* (/ (* 2 max-camber) (Math/pow position-camber 2)) (- position-camber x)) ;;; (2M/P^2)(P-x)
       (* (/ (* 2 max-camber) (Math/pow (- 1 position-camber) 2)) (- position-camber x))))) ;;; (2M/(1-P)^2)(P-x)
 
-(defn round-double
-  "Takes a double and returns a double with four points of accuracy"
-  [n]
-  (double (/ (int (+ (* n 10000) 0.5)) 10000)))
-
 
 (defn upper-surface-x-function
   "takes an x  and gives an x coordinate on the paremetric upper-surface-x-function
   (theta =  atan(G)), x - thickness-function * sin(theta)."
   [individual x]
   (let [thickness (individual :corrected-thickness)]
-  (- x (* (thickness-function thickness x)
+    (- x (* (thickness-function thickness x)
           (Math/sin (Math/atan (gradient-function individual x)))))))
 
 
@@ -69,7 +70,7 @@
   (theta =  atan(G)), x + thickness-function * sin(theta)."
   [individual x]
   (let [thickness (individual :corrected-thickness)]
-  (+ x (* (thickness-function thickness x)
+    (+ x (* (thickness-function thickness x)
           (Math/sin (Math/atan (gradient-function individual x)))))))
 
 
@@ -78,7 +79,7 @@
   (theta =  atan(G)), camber-function + thickness-function * cos(theta)."
   [individual x]
   (let [thickness (individual :corrected-thickness)]
-  (+ camber-function (* (thickness-function thickness x)
+    (+ camber-function (* (thickness-function thickness x)
                         (Math/cos (Math/atan (gradient-function individual x)))))))
 
 
@@ -87,10 +88,37 @@
   (theta =  atan(G)), camber-function - thickness-function * cos(theta)."
   [individual x]
   (let [thickness (individual :corrected-thickness)]
-  (- camber-function (* (thickness-function thickness x)
+    (- camber-function (* (thickness-function thickness x)
           (Math/cos (Math/atan (gradient-function individual x)))))))
 
+;;;---------------- Area Functions ---------------
 
-(defn lift-function
-  []
-  MATH)
+(defn left-rule
+  "Creates a lazy seque of points to evaluate a function at for a left rule riemann sum
+  Takes a number of particians"
+  [pieces]
+  (range 0 1 (/ 1 pieces)))
+
+(defn right-rule
+  "Creates a lazy seque of points to evaluate a function at for a left rule riemann sum
+  Takes a number of particians"
+  [pieces]
+  (range (/ 1 pieces) (+ (/ 1 pieces) 1) (/ 1 pieces)))
+
+(defn riemann-sum-abstracted
+  "Will do a riemann sum on the function:
+  State will be a function, either left, right, or middle, based on the style of riemann sum.
+  Pices is how boxes it makes, aka the resolution of the riemann sum"
+  [function state pieces]
+  (reduce #(+ %1 (* (/ 1 pieces) (function %2))) 0 (state pieces)))
+
+(defn riemann-sum-production
+  "same as riemann sum but if might be faster, you need to figure our left, right, middle
+  functions on your own"
+  [function start-x end-x increment pieces]
+  (reduce #(+ %1 (* (/ 1 pieces) (function %2))) 0 (range start end increment)))
+
+;;(defn lift-function
+;;  [])
+(right-rule 4)
+
