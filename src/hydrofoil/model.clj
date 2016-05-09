@@ -138,6 +138,20 @@
   (+ (/ (trapazoid-integral individual function (/ pieces 2)) 3)
      (/ (* 2 (integral-abstracted individual function middle-rule (/ pieces 2))) 3)))
 
+(defn area
+  [individual]
+  (- (simpson-integral individual upper-surface-y-function 90)
+     (simpson-integral individual lower-surface-y-function 90)))
+
+;;;---------------- Coefficantof lift ----------------
+(defn coefficeant-of-lift
+  [individual run-constants]
+  (let [attack-angle (run-constants :angle-of-attack)
+        camber-position (individual :corrected-position-camber)]
+    (* (* 2 (Math/pi))
+       (+ attack-angle (* 2 camber-position)))))
+
+
 ;;(defn lift-function
 ;;  [])
 
