@@ -18,16 +18,19 @@ not just the classes you are testing.
   * Expected: -0.0576, Was: -0.0575
 
 ##Model
-1. ~~Test `gradient-function`~~
-2. Test `upper-surface-x-function`
-3. Test `upper-surface-y-function`
-4. Test `lower-surface-x-function`
-5. Test `lower-surface-y-function`
-6. ~~Figure out how to use Reimond Sum program from java~~
-7. Build Area Function
-8. ~~Build Trapazoid and Simpson's Rule~~
-8. Test CenterBox, Trapazoid, and Simpson Approaches to approximate integration
-9. Coefficient of lift stuff
+1. Fix `upper-surface-x-function`
+2. Fix `lower-surface-x-function`
+3. Fix `lower-surface-y-function`
+4. Test `upper-surface-x-function`
+5. Test `lower-surface-x-function`
+6. Test `lower-surface-y-function`
+7. Test `left-rule`
+8. Test `right-rule`
+9. Test `middle-rule`
+10. Test `trapazoid rule`
+11. Test `simpson's rule`
+12. Build Area Function
+13. Coefficient of lift stuff
 
 ##Evolution
 ##Core
