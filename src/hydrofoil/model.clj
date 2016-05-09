@@ -130,13 +130,13 @@
 
 (defn trapazoid-integral
   [individual function pieces]
-  (* 0.5 (+ (integral-abstracted function left-rule pieces individual)
-            (integral-abstracted function right-rule pieces individual))))
+  (* 0.5 (+ (integral-abstracted individual function left-rule pieces)
+            (integral-abstracted individual function right-rule pieces))))
 
 (defn simpson-integral
   [individual function pieces]
-  (+ (/ (trapazoid-integral function (/ pieces 2) individual) 3)
-     (/ (* 2 (integral-abstracted function middle-rule (/ pieces 2) individual)) 3)))
+  (+ (/ (trapazoid-integral individual function (/ pieces 2)) 3)
+     (/ (* 2 (integral-abstracted individual function middle-rule (/ pieces 2))) 3)))
 
 ;;(defn lift-function
 ;;  [])

@@ -11,9 +11,10 @@ not just the classes you are testing.
   * **NOTE:** It does not work when `x = 1`
 * Re-wrote `camber-function` to take an individual
   * **NOTE:** Use lets to define M, P, and T
+* **Using Simpson's rule with 90 particians**
 
 ##Bug Report
-* **It seems as double values that are negative, consistanty have rounding error**
+* **It seems as double values that are negative consistanty have rounding error**
 * Rounding error in gradient-function:
   * *M = 4.5 | P = .0001| T = 12 | x = 0.64*
   * Expected: -0.0576, Was: -0.0575
@@ -32,11 +33,11 @@ not just the classes you are testing.
 4. ~~Test `upper-surface-x-function`~~
 5. ~~Test `lower-surface-x-function`~~
 6. ~~Test `lower-surface-y-function`~~
-7. Test `left-rule`
-8. Test `right-rule`
-9. Test `middle-rule`
-10. Test `trapazoid rule`
-11. Test `simpson's rule`
+7. ~~Test `left-rule`~~
+8. ~~Test `right-rule`~~
+9. ~~Test `middle-rule`~~
+10. ~~Test `trapazoid rule`~~
+11. ~~Test `simpson's rule`~~
 12. Build Area Function
 13. Coefficient of lift stuff
 

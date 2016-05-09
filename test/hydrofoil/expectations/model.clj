@@ -142,4 +142,36 @@
 
 ;;;-------- riemann-sum ----------
 (expect 0.0681
-        (round-double (integral-abstracted (NACA-design 0 5 20) upper-surface-y-function left-rule 200)))
+        (round-double (integral-abstracted (NACA-design 0 5 20) upper-surface-y-function left-rule 140)))
+
+(expect 0.0681
+        (round-double (integral-abstracted (NACA-design 0 5 20) upper-surface-y-function right-rule 140)))
+
+(expect 0.0681
+        (round-double (integral-abstracted (NACA-design 0 5 20) upper-surface-y-function middle-rule 50)))
+
+(expect 0.0681
+        (round-double (trapazoid-integral (NACA-design 0 5 20) upper-surface-y-function 140)))
+
+(expect 0.0681
+        (round-double (simpson-integral (NACA-design 0 5 20) upper-surface-y-function 80)))
+
+
+
+(expect 0.0994
+        (round-double (integral-abstracted (NACA-design 4.75 4.5 20) upper-surface-y-function left-rule 80)))
+
+(expect 0.0994
+        (round-double (integral-abstracted (NACA-design 4.75 4.5 20) upper-surface-y-function right-rule 80)))
+
+(expect 0.0994
+        (round-double (integral-abstracted (NACA-design 4.75 4.5 20) upper-surface-y-function middle-rule 195)))
+
+(expect 0.0994
+        (round-double (trapazoid-integral (NACA-design 4.75 4.5 20) upper-surface-y-function 80)))
+
+(expect 0.0994
+        (round-double (simpson-integral (NACA-design 4.75 4.5 20) upper-surface-y-function 50)))
+
+
+
