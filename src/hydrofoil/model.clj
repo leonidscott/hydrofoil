@@ -157,9 +157,9 @@
 ;;; **---------------- LIFT EQUATION ----------------**
 (defn lift-function
   [individual run-constants]
-  (let [dencity (run-constants :dencity dencity)
-        velocity (run-constants :velocity velocity)
-        angle-of-attack (run-constants :angle-of-attack angle-of-attack)]
+  (let [dencity (run-constants :dencity)
+        velocity (run-constants :velocity)
+        angle-of-attack (run-constants :angle-of-attack)]
     (* (coefficient-of-lift individual run-constants)
        (/ (* dencity (Math/pow velocity 2)) 2)
        (area individual))))

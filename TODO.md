@@ -27,19 +27,13 @@ not just the classes you are testing.
   * Expected: -0.0992, Was: -0.0991
 
 ##Model
-1. ~~Fix `upper-surface-x-function`~~
-2. ~~Fix `lower-surface-x-function`~~
-3. ~~Fix `lower-surface-y-function`~~
-4. ~~Test `upper-surface-x-function`~~
-5. ~~Test `lower-surface-x-function`~~
-6. ~~Test `lower-surface-y-function`~~
-7. ~~Test `left-rule`~~
-8. ~~Test `right-rule`~~
-9. ~~Test `middle-rule`~~
-10. ~~Test `trapazoid rule`~~
-11. ~~Test `simpson's rule`~~
-12. Build Area Function
-13. Coefficient of lift stuff
+1. More Integration Methods Testing
+  * Try more function cases to narrow in partican counts
+  * Time results
+2. Implement Derivatives for Area Function
+3. Test Area Function
+4. Test coefficeant of lift function
+5. Test Lift function
 
 ##Evolution
 ##Core
