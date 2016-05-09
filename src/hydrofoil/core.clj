@@ -14,6 +14,12 @@
             :positon-camber position-camber
             :thickness thickness))
 
+(defn run-constants
+  [dencity velocity angle-of-attack]
+  (hash-map :dencity dencity
+            :velocity velocity
+            :angle-of-attack angle-of-attack))
+
 
 ;;(defn generate-random-design
 ;;  [individual]

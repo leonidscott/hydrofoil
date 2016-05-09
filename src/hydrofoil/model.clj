@@ -144,17 +144,32 @@
      (simpson-integral individual lower-surface-y-function 90)))
 
 ;;;---------------- Coefficantof lift ----------------
-(defn coefficeant-of-lift
+(defn coefficient-of-lift
   [individual run-constants]
   (let [attack-angle (run-constants :angle-of-attack)
         camber-position (individual :corrected-position-camber)]
-    (* (* 2 (Math/pi))
+    (* (* 2 (Math/PI))
        (+ attack-angle (* 2 camber-position)))))
 
 
-;;(defn lift-function
-;;  [])
 
+
+;;; **---------------- LIFT EQUATION ----------------**
+(defn lift-function
+  [individual run-constants]
+  (let [dencity (run-constants :dencity dencity)
+        velocity (run-constants :velocity velocity)
+        angle-of-attack (run-constants :angle-of-attack angle-of-attack)]
+    (* (coefficient-of-lift individual run-constants)
+       (/ (* dencity (Math/pow velocity 2)) 2)
+       (area individual))))
+;;; **---------------- LIFT EQUATION ----------------**
 ;;(integral-abstracted (hash-map :corrected-max-camber 0 :corrected-position-camber 0 :corrected-thickness 0.45) upper-surface-y-function left-rule 100)
 
 ;(upper-surface-y-function (hash-map :corrected-max-camber 0 :corrected-position-camber 0.5 :corrected-thickness 0.45) 0)
+
+
+
+
+
+
