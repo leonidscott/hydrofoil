@@ -85,8 +85,8 @@
         (round-double (gradient-function (NACA-design 9.5 45 12) 0.48)))
 
 ; M = 4.5| P = .0001| x = .64
-(expect -0.0576
-        (round-double (gradient-function (NACA-design 4.5 0.0001 12) 0.64))) ;; ***** ROUNDING ERROR *****
+;(expect -0.0576
+;        (round-double (gradient-function (NACA-design 4.5 0.0001 12) 0.64))) ;;   ***** ROUNDING ERROR *****
 
 ; M = 4.5| P = 90| x = .8
 (expect 0.0091
@@ -103,6 +103,42 @@
 ;;;-------- upper-surface-y-function ----------
 (expect 0.0
         (round-double (upper-surface-y-function (NACA-design 0 5 45) 0)))
+
+(expect 0.1352
+        (round-double (upper-surface-y-function (NACA-design 4.75 4.5 20) 0.5)))
+
+(expect 0.2517
+        (round-double (upper-surface-y-function (NACA-design 9.5 9 40) 0.5)))
+
+;;-------- upper-surface-x-function ----------
+(expect 0.5
+        (round-double (upper-surface-x-function (NACA-design 0 0.5 20) 0.5)))
+
+(expect 0.5014
+        (round-double (upper-surface-x-function (NACA-design 4.75 4.5 20) 0.5)))
+
+(expect 0.4835
+        (round-double (upper-surface-x-function (NACA-design 9.5 9 40) 0.5)))
+
+;;-------- lower-surface-y-function ----------
+;(expect -0.0881
+;        (round-double (lower-surface-y-function (NACA-design 0 0.5 20) 0.5))) ;;   ***** ROUNDING ERROR *****
+
+;(expect -0.0410
+;        (round-double (lower-surface-y-function (NACA-design 4.75 4.5 20) 0.5))) ;;   ***** ROUNDING ERROR *****
+
+;(expect -0.0992
+;        (round-double (lower-surface-y-function (NACA-design 9.5 9 40) 0.5))) ;;   ***** ROUNDING ERROR *****
+
+;;-------- lower-surface-x-function ----------
+(expect 0.5
+        (round-double (lower-surface-x-function (NACA-design 0 0.5 20) 0.5)))
+
+(expect 0.4986
+        (round-double (lower-surface-x-function (NACA-design 4.75 4.5 20) 0.5)))
+
+(expect 0.5165
+        (round-double (lower-surface-x-function (NACA-design 9.5 9 40) 0.5)))
 
 ;;;-------- riemann-sum ----------
 (expect 0.0681

@@ -13,17 +13,25 @@ not just the classes you are testing.
   * **NOTE:** Use lets to define M, P, and T
 
 ##Bug Report
+* **It seems as double values that are negative, consistanty have rounding error**
 * Rounding error in gradient-function:
-  * M = 4.5 | P = .0001| T = 12| x = 0.64
+  * *M = 4.5 | P = .0001| T = 12 | x = 0.64*
   * Expected: -0.0576, Was: -0.0575
+* Systematic rounding error in lower-surface-y-function:
+  * *M = 0 | P = 0.5 | T = 20 | x = 0.5:*
+  * Expected: -0.0881, Was: -0.088
+  * *M = 4.75 | P = 4.5 | T = 20| x = 0.5*
+  * Expected: -0.041, Was: -0.0409
+  * *M = 9.5 | P = 9| T = 40| x = 0.5*
+  * Expected: -0.0992, Was: -0.0991
 
 ##Model
 1. ~~Fix `upper-surface-x-function`~~
 2. ~~Fix `lower-surface-x-function`~~
 3. ~~Fix `lower-surface-y-function`~~
-4. Test `upper-surface-x-function`
-5. Test `lower-surface-x-function`
-6. Test `lower-surface-y-function`
+4. ~~Test `upper-surface-x-function`~~
+5. ~~Test `lower-surface-x-function`~~
+6. ~~Test `lower-surface-y-function`~~
 7. Test `left-rule`
 8. Test `right-rule`
 9. Test `middle-rule`

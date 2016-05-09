@@ -90,7 +90,7 @@
   [individual x]
   (let [thickness (individual :corrected-thickness)]
     (- (camber-function individual x)
-       (* (thickness-function thickness x)
+       (* (thickness-function individual x)
           (Math/cos (Math/atan (gradient-function individual x)))))))
 
 ;;;---------------- Area Functions ---------------
