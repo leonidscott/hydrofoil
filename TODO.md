@@ -18,9 +18,9 @@ not just the classes you are testing.
   * Expected: -0.0576, Was: -0.0575
 
 ##Model
-1. Fix `upper-surface-x-function`
-2. Fix `lower-surface-x-function`
-3. Fix `lower-surface-y-function`
+1. ~~Fix `upper-surface-x-function`~~
+2. ~~Fix `lower-surface-x-function`~~
+3. ~~Fix `lower-surface-y-function`~~
 4. Test `upper-surface-x-function`
 5. Test `lower-surface-x-function`
 6. Test `lower-surface-y-function`

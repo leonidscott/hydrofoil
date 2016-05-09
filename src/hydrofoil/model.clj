@@ -61,8 +61,8 @@
   (theta =  atan(G)), x - thickness-function * sin(theta)."
   [individual x]
   (let [thickness (individual :corrected-thickness)]
-    (- x (* (thickness-function thickness x)
-          (Math/sin (Math/atan (gradient-function individual x)))))))
+    (- x (* (thickness-function individual x)
+            (Math/sin (Math/atan (gradient-function individual x)))))))
 
 
 (defn lower-surface-x-function
@@ -70,8 +70,8 @@
   (theta =  atan(G)), x + thickness-function * sin(theta)."
   [individual x]
   (let [thickness (individual :corrected-thickness)]
-    (+ x (* (thickness-function thickness x)
-          (Math/sin (Math/atan (gradient-function individual x)))))))
+    (+ x (* (thickness-function individual x)
+            (Math/sin (Math/atan (gradient-function individual x)))))))
 
 
 (defn upper-surface-y-function
@@ -89,7 +89,8 @@
   (theta =  atan(G)), camber-function - thickness-function * cos(theta)."
   [individual x]
   (let [thickness (individual :corrected-thickness)]
-    (- camber-function (* (thickness-function thickness x)
+    (- (camber-function individual x)
+       (* (thickness-function thickness x)
           (Math/cos (Math/atan (gradient-function individual x)))))))
 
 ;;;---------------- Area Functions ---------------
