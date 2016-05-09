@@ -25,7 +25,7 @@ not just the classes you are testing.
 5. Test `lower-surface-y-function`
 6. ~~Figure out how to use Reimond Sum program from java~~
 7. Build Area Function
-8. Build Trapazoid and Simpson's Rule
+8. ~~Build Trapazoid and Simpson's Rule~~
 8. Test CenterBox, Trapazoid, and Simpson Approaches to approximate integration
 9. Coefficient of lift stuff
 

@@ -99,4 +99,11 @@
 ; M = 4.5| P = 45| x = 1
 (expect 0.0156
         (round-double (gradient-function (NACA-design 4.5 45 12) 1.0)))
+
+;;;-------- upper-surface-y-function ----------
+(expect 0.0
+        (round-double (upper-surface-y-function (NACA-design 0 5 45) 0)))
+
 ;;;-------- riemann-sum ----------
+(expect 0.0681
+        (round-double (integral-abstracted (NACA-design 0 5 20) upper-surface-y-function left-rule 200)))

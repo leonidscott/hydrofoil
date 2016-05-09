@@ -79,8 +79,9 @@
   (theta =  atan(G)), camber-function + thickness-function * cos(theta)."
   [individual x]
   (let [thickness (individual :corrected-thickness)]
-    (+ camber-function (* (thickness-function thickness x)
-                        (Math/cos (Math/atan (gradient-function individual x)))))))
+    (+ (camber-function individual x)
+       (* (thickness-function individual x)
+          (Math/cos (Math/atan (gradient-function individual x)))))))
 
 
 (defn lower-surface-y-function
@@ -117,26 +118,28 @@
   "Will do a riemann sum on the function:
   State will be a function, either left, right, or middle, based on the style of riemann sum.
   Pices is how boxes it makes, aka the resolution of the riemann sum"
-  [function state pieces]
-  (reduce #(+ %1 (* (/ 1 pieces) (function %2))) 0 (state pieces)))
+  [individual function state pieces]
+  (reduce #(+ %1 (* (/ 1 pieces) (function individual %2))) 0 (state pieces)))
 
 (defn integral-production
   "same as riemann sum but if might be faster, you need to figure our left, right, middle
   functions on your own"
-  [function start-x end-x increment pieces]
-  (reduce #(+ %1 (* (/ 1 pieces) (function %2))) 0 (range start-x end-x increment)))
+  [individual function start-x end-x increment pieces]
+  (reduce #(+ %1 (* (/ 1 pieces) (function individual %2))) 0 (range start-x end-x increment)))
 
 (defn trapazoid-integral
-  [function pieces]
-  (* 0.5 (+ (integral-abstracted function left-rule pieces)
-            (integral-abstracted function right-rule pieces))))
+  [individual function pieces]
+  (* 0.5 (+ (integral-abstracted function left-rule pieces individual)
+            (integral-abstracted function right-rule pieces individual))))
 
 (defn simpson-integral
-  [function pieces]
-  (+ (/ (trapazoid-integral function (/ pieces 2)) 3)
-     (/ (* 2 (integral-abstracted function middle-rule (/ pieces 2))) 3)))
+  [individual function pieces]
+  (+ (/ (trapazoid-integral function (/ pieces 2) individual) 3)
+     (/ (* 2 (integral-abstracted function middle-rule (/ pieces 2) individual)) 3)))
 
 ;;(defn lift-function
 ;;  [])
 
+;;(integral-abstracted (hash-map :corrected-max-camber 0 :corrected-position-camber 0 :corrected-thickness 0.45) upper-surface-y-function left-rule 100)
 
+;(upper-surface-y-function (hash-map :corrected-max-camber 0 :corrected-position-camber 0.5 :corrected-thickness 0.45) 0)
