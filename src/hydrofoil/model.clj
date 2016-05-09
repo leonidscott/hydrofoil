@@ -113,18 +113,28 @@
          1
          (/ 1 pieces)))
 
-(defn riemann-sum-abstracted
+(defn integral-abstracted
   "Will do a riemann sum on the function:
   State will be a function, either left, right, or middle, based on the style of riemann sum.
   Pices is how boxes it makes, aka the resolution of the riemann sum"
   [function state pieces]
   (reduce #(+ %1 (* (/ 1 pieces) (function %2))) 0 (state pieces)))
 
-(defn riemann-sum-production
+(defn integral-production
   "same as riemann sum but if might be faster, you need to figure our left, right, middle
   functions on your own"
   [function start-x end-x increment pieces]
   (reduce #(+ %1 (* (/ 1 pieces) (function %2))) 0 (range start-x end-x increment)))
+
+(defn trapazoid-integral
+  [function pieces]
+  (* 0.5 (+ (integral-abstracted function left-rule pieces)
+            (integral-abstracted function right-rule pieces))))
+
+(defn simpson-integral
+  [function pieces]
+  (+ (/ (trapazoid-integral function (/ pieces 2)) 3)
+     (/ (* 2 (integral-abstracted function middle-rule (/ pieces 2))) 3)))
 
 ;;(defn lift-function
 ;;  [])
