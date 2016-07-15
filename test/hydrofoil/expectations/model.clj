@@ -173,5 +173,9 @@
 (expect 0.0994
         (round-double (simpson-integral (NACA-design 4.75 4.5 20) upper-surface-y-function 50)))
 
-
+;;;-------- derivative ----------
+(expect 1.0455
+        (round-double(derivative (NACA-design 9.5 9 30) upper-surface-x-function 0.5)))
+(expect 0.4877
+        (round-double (upper-surface-x-function (NACA-design 9.5 9 30) 0.5)))
 

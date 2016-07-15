@@ -93,6 +93,16 @@
        (* (thickness-function individual x)
           (Math/cos (Math/atan (gradient-function individual x)))))))
 
+;;;---------------- Derivative -------------------
+(defn derivative
+  "takes an individual, a function, and an x and returns a derivative at that point
+  using numerical derivation"
+  [individual function x]
+  (let [resolution 0.00000001]
+    (/ (- (function individual (+ x resolution))
+          (function individual x))
+       resolution)))
+
 ;;;---------------- Area Functions ---------------
 
 (defn left-rule
@@ -123,7 +133,7 @@
   (reduce #(+ %1 (* (/ 1 pieces) (function individual %2))) 0 (state pieces)))
 
 (defn integral-production
-  "same as riemann sum but if might be faster, you need to figure our left, right, middle
+  "same as riemann sum but it might be faster, you need to figure out left, right, middle
   functions on your own"
   [individual function start-x end-x increment pieces]
   (reduce #(+ %1 (* (/ 1 pieces) (function individual %2))) 0 (range start-x end-x increment)))

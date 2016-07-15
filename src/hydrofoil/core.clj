@@ -14,6 +14,8 @@
             :positon-camber position-camber
             :thickness thickness))
 
+(derivative (NACA-design 9.5 9 30) upper-surface-x-function 0.5)
+
 (defn run-constants
   [dencity velocity angle-of-attack]
   (hash-map :dencity dencity
