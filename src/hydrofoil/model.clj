@@ -103,6 +103,7 @@
           (function individual x))
        resolution)))
 
+
 ;;;---------------- Area Functions ---------------
 
 (defn left-rule
