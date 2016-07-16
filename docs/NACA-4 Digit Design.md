@@ -12,6 +12,7 @@ have only a few constants to evolve, and are easiest to test.
 ## Backgound 
 A foil has a set of terminology that is used to describe its shape. 
 
+![initial state](img/hydrofoil.png)
 
 A NACA 4 Digit foil, is called a NACA 4 Digit foil, the shape of the foil can be generated from 4 digits. A NACA 4 Digit foil is recognisable by the word **NACA** and the four digits that follow.  
 # **NACA MPXX**   
