@@ -31,6 +31,7 @@ This basically controlls how arched the foil is. The number is a percentage of t
 #### P: The Maximum Camber Position  
 This is where the Maximum Camber will lay with respect to the chord line. The Maximum Camber Position is inputed as a percentage of the chord line, so if the Maximum Camber Position was 50, the Maximum Camber would be 50% of the way down the chord. 
 #### XX: Foil Thickness  
-This is a bit of magic. This number is a percentage of the chord.
+This is a bit of magic. This number is a percentage of the chord.  
+
 ![initial state](img/NACA4a.gif)
 
