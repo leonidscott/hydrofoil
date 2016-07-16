@@ -10,5 +10,12 @@ have only a few constants to evolve, and are easiest to test.
 * [NACA 4 digit airfoil generator] (http://airfoiltools.com/airfoil/naca4digit) My go to reference. It allows you to play with the Camber, Camber Position, and thickness to see how they effect the foil shape. It also shows the math of how you turn the digits into a foil cross-section, but lacks a bit on some of the context around that math. 
 
 ## Backgound 
+A foil has a set of terminology that is used to describe its shape. 
 
+
+A NACA 4 Digit foil, is called a NACA 4 Digit foil, the shape of the foil can be generated from 4 digits. A NACA 4 Digit foil is recognisable by the word **NACA** and the four digits that follow.  
+# **NACA MPXX**   
+* M is the maximum camber
+* P is the position of the maximum camber
+* XX is the thickness of the foil
 ## Application
