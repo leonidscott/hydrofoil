@@ -5,7 +5,7 @@ Classifying them is nice because you can standerdize foil shapes. NACA created a
 the 4 series, the 5 series, ... , all the way up to the 8 series. We are starting out with the 4 series because they are the simplest, 
 have only a few constants to evolve, and are easiest to test. 
 ## Resources 
-* [NACA airfoil wikipedia] (https://en.wikipedia.org/wiki/NACA_airfoil)There's no better place to start than wikipedia
+* [NACA airfoil wikipedia] (https://en.wikipedia.org/wiki/NACA_airfoil) There's no better place to start than wikipedia
 * [NACA airfoil series pdf](http://people.clarkson.edu/~pmarzocc/AE429/The%20NACA%20airfoil%20series.pdf) A more formal description of the NACA foil series, also describes a bit more of the terminoligy around what a foil is.
 * [NACA 4 digit airfoil generator] (http://airfoiltools.com/airfoil/naca4digit) My go to reference. It allows you to play with the Camber, Camber Position, and thickness to see how they effect the foil shape. It also shows the math of how you turn the digits into a foil cross-section, but lacks a bit on some of the context around that math. 
 
