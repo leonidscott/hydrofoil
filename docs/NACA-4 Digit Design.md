@@ -23,7 +23,7 @@ A NACA 4 Digit foil, is called a NACA 4 Digit foil, the shape of the foil can be
 * P is the position of the maximum camber
 * XX is the thickness of the foil 
 
-(Its worth noting that 4 Digit NACA Series actually only has three numbers :laughing:)  
+(Its worth noting that 4 Digit NACA Series actually only have three numbers :laughing:)  
 ***
 
 #### M: The Maximum Camber  
