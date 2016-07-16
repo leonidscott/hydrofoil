@@ -11,7 +11,7 @@ This function contains constants that get used to define the
 environment that the foil will be tested in. The constants are: 
 * `dencity`: This is the fluid dencity 
 * `velocity`: Fluid velocity
-* `angle-of-attack`: This the angle the chord, measured from the aft of the cord, to the horizontal.    
+* `angle-of-attack`: This is the angle the chord, measured from the aft of the cord, to the horizontal.    
 
 #### `NACA-design`  
 This function includes takes the three numbers needed to define an NACA-4 Digit Foil.
