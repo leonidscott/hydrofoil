@@ -198,6 +198,7 @@
        (/ (* dencity (Math/pow velocity 2)) 2)
        (area individual))))
 ;;; **---------------- LIFT EQUATION ----------------**
+
 ;;(integral-abstracted (hash-map :corrected-max-camber 0 :corrected-position-camber 0 :corrected-thickness 0.45) upper-surface-y-function left-rule 100)
 
 ;(upper-surface-y-function (hash-map :corrected-max-camber 0 :corrected-position-camber 0.5 :corrected-thickness 0.45) 0)
