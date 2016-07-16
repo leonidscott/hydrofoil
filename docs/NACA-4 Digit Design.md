@@ -24,12 +24,13 @@ A NACA 4 Digit foil, is called a NACA 4 Digit foil, the shape of the foil can be
 * XX is the thickness of the foil 
 
 (Its worth noting that 4 Digit NACA Series actually only has three numbers :laughing:)  
-Let's go through each digit.   
-#### M: The Maximum Camber  
+***
+
+#### `M: The Maximum Camber`  
 This basically controlls how arched the foil is. The number is a percentage of the lenght of the chord, so if the Maximum Camber is 5, that means that the highest point of the mean camber line is 5% the length of the chord.   
-#### P: The Maximum Camber Position  
+#### `P: The Maximum Camber Position`  
 This is where the Maximum Camber will lay with respect to the chord line. The Maximum Camber Position is inputed as a percentage of the chord line, so if the Maximum Camber Position was 50, the Maximum Camber would be 50% of the way down the chord. 
-#### XX: Foil Thickness  
+#### `XX: Foil Thickness`  
 This is a bit of magic. This number is a percentage of the chord.
 
 
