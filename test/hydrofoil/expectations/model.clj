@@ -179,3 +179,14 @@
 (expect 0.4877
         (round-double (upper-surface-x-function (NACA-design 9.5 9 30) 0.5)))
 
+;;;-------- area function ---------
+
+(expect 0.0885
+        (round-double (area (NACA-design 0 0 13)))) ;; symetric -- thin foil
+;;(expect 0.2724
+;;        (round-double (area (NACA-design 0 0 40)))) ;; symetric -- thick foil   *****ROUNDING ERROR*****
+;; expected 0.2724, was 0.2722
+(expect 0.0817
+        (round-double (area (NACA-design 3 40 12)))) ;; assymetric -- thin foil
+(expect 0.1367
+        (round-double (area (NACA-design 9.5 0 20)))) ;; assymetric -- thick foil

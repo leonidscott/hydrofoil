@@ -149,10 +149,33 @@
   (+ (/ (trapazoid-integral individual function (/ pieces 2)) 3)
      (/ (* 2 (integral-abstracted individual function middle-rule (/ pieces 2))) 3)))
 
+(defn adjusted-upper-function
+  "   /////   upper-surface-y-function * d/dx(upper-surface-x-function) /////
+  This exists as a helper function for 'area' because the way the integral functions work,
+  you can't pass the multiplication of two functions without creating a helper function that
+  does that... so that's the only reason this is here."
+  [individual x]
+  (* (upper-surface-y-function individual x)
+     (derivative individual upper-surface-x-function x)))
+
+(defn adjusted-lower-function
+  "   /////   lower-surface-y-function * d/dx(lower-surface-x-function) /////
+  This exists as a helper function for 'area' because the way the integral functions work,
+  you can't pass the multiplication of two functions without creating a helper function that
+  does that... so that's the only reason this is here."
+  [individual x]
+  (* (lower-surface-y-function individual x)
+     (derivative individual lower-surface-x-function x)))
+
 (defn area
+  "  ///// Integral[upper-surface-y-function * d/dx(upper-surface-x-function)
+            - lower-surface-y-function * d/dx(lower-surface-x-function),
+            {0, 1}] /////
+  The integral multiplies by the derivative of the x function because the functions are
+  paremetric."
   [individual]
-  (- (simpson-integral individual upper-surface-y-function 90)
-     (simpson-integral individual lower-surface-y-function 90)))
+  (- (simpson-integral individual adjusted-upper-function 90)
+     (simpson-integral individual adjusted-lower-function 90)))
 
 ;;;---------------- Coefficantof lift ----------------
 (defn coefficient-of-lift
