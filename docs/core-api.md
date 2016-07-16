@@ -1,7 +1,7 @@
 #core.clj API
 
-core.clj is where the environment for the run will be made. 
-This eventually will contain the function that actually runs hole project. 
+`core.clj` is where the environment for the run will be made. 
+This eventually will contain the function that actually runs whole project. 
 Things that are stored here include functions that get utalized in both the model
 and the evolution as well as run constants like fluid velocity, AOT etc...
 
