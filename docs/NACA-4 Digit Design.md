@@ -38,10 +38,14 @@ This is a bit of magic. This number is a percentage of the chord. What this perc
 In the picture above, **Cmax** is the Maximum Camber, **X-Cmax** is the Maximum Camber Position, and the thickness isn't described on the picture :cry:. I would suggest playing with these three inputs in the foil generator in the reasource section. 
 
 ##The Math  
-I don't know why exactly the proccess the NACA people used to arrive at these equations but I do know how to use them. To start off, there are some simple equations that define camber and thickness. 
+I don't know why exactly the proccess the NACA people used to arrive at these equations but I do know how to use them. To start off, there are some simple equations that define camber and thickness. The camber and thickness equations on their own don't give you a foil shape, but they are the building blocks to get there. The final goal will be to create four equations that describe the upper and lower surfaces of the foil. 
 
 #### Camber Equations  
 The first line is the camber equation, it is piecewise at the Maximum Camber Position.
 Next there is the derivative of the camber equation, called the gradient equation.  
 ![alt text](img/Camber Equation.png)  
 
+#### Thickness Distribution  
+Next is the equation that defines the thickness throughout the foil.
+It's not that hard to see why it makes the teardrop shape, but how the exact constants were decided is beyond me. 
+![alt text](img/Thickness Distribution.png)  
