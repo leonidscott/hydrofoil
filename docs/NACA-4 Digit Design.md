@@ -41,7 +41,7 @@ In the picture above, **Cmax** is the Maximum Camber, **X-Cmax** is the Maximum 
 I don't know why exactly the proccess the NACA people used to arrive at these equations but I do know how to use them. To start off, there are some simple equations that define camber and thickness. 
 
 #### Camber Equations  
-![alt text](img/Camber Equation.png)  
 The first line is the camber equation, it is piecewise at the Maximum Camber Position.
-Next there is the derivative of the camber equation, called the gradient equation. 
+Next there is the derivative of the camber equation, called the gradient equation.  
+![alt text](img/Camber Equation.png)  
 
