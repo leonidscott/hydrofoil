@@ -49,3 +49,7 @@ Next there is the derivative of the camber equation, called the gradient equatio
 Next is the equation that defines the thickness throughout the foil.
 It's not that hard to see why it makes the teardrop shape, but how the exact constants were decided is beyond me. 
 ![alt text](img/Thickness Distribution.png)  
+
+#### Bringing it all together: Upper and Lower Functions 
+This section gets a bit more complicated. The gradient function (derivative of the camber function) is mapped into radiants using arctan. This gets fed into four parametric functions that define upper and lower curves. For both the upper and lower functions there is a an x and y function. 
+![alt text](img/Upper-Lower Equations.png)
