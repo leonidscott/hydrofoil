@@ -14,7 +14,7 @@ A foil has a set of terminology that is used to describe its shape.
 
 ![initial state](img/hydrofoil.png)
 
-In the picture above, there is a red dotted line, this is the *chord line* or chord. The chord line connects the leading edge to the trailing edge. Next there is the dotted blue line, this is the *camber line*, also called the *mean camber line*. This line runs through the foil such that at any givin point on the camber line, the upper and lower surfaces are the same distance from it. Finally, you will notice that the thickness increases and decreases around the camber line at a certain rate. These are the characterstics of the foil that the NACA 4 Digit Series are built from 
+In the picture above, there is a red dotted line, this is the *chord line* or chord. The chord line connects the leading edge to the trailing edge. All quantitve measurments of the foil are made in reference to the chord, normally as a percentage. Next there is the dotted blue line, this is the *camber line*, also called the *mean camber line*. This line runs through the foil such that at any givin point on the camber line, the upper and lower surfaces are the same distance from it. Finally, you will notice that the thickness increases and decreases around the camber line at a certain rate. These are the characterstics of the foil that the NACA 4 Digit Series are built from 
 
 ## The (almost) 4 Digits 
 A NACA 4 Digit foil, is called a NACA 4 Digit foil, the shape of the foil can be generated from 4 digits. A NACA 4 Digit foil is recognisable by the word **NACA** and the four digits that follow. The following shows how the NACA 4 Digits are broken down.
