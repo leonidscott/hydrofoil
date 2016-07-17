@@ -27,7 +27,7 @@ A NACA 4 Digit foil, is called a NACA 4 Digit foil, the shape of the foil can be
 ***
 
 #### M: The Maximum Camber  
-This basically controlls how arched the foil is. The number is a percentage of the lenght of the chord, so if the Maximum Camber is 5, that means that the highest point of the mean camber line is 5% the length of the chord.   
+This basically controls how arched the foil is. The number is a percentage of the lenght of the chord, so if the Maximum Camber is 5, that means that the highest point of the mean camber line is 5% the length of the chord.   
 #### P: The Maximum Camber Position  
 This is where the Maximum Camber will lay with respect to the chord line. The Maximum Camber Position is inputed as a percentage of the chord line, so if the Maximum Camber Position was 50, the Maximum Camber would be 50% of the way down the chord. 
 #### XX: Foil Thickness  
@@ -35,7 +35,7 @@ This is a bit of magic. This number is a percentage of the chord. What this perc
 
 ![initial state](img/NACA4a.gif)  
 
-In the picture above, **Cmax** is the Maximum Camber, **X-Cmax** is the Maximum Camber Position, and the thickness isn't described on the picture :cry:. I would suggest playing with these three inputs in the foil generator in the reasource section. 
+In the picture above, **Cmax** is the Maximum Camber, **X-Cmax** is the Maximum Camber Position, and the thickness isn't described on the picture :cry:. I would suggest playing with these three inputs in the foil generator in the resource section. 
 
 ##The Math  
 I don't know why exactly the proccess the NACA people used to arrive at these equations but I do know how to use them. To start off, there are some simple equations that define camber and thickness. The camber and thickness equations on their own don't give you a foil shape, but they are the building blocks to get there. The final goal will be to create four equations that describe the upper and lower surfaces of the foil. 
