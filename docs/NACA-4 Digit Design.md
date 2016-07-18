@@ -37,7 +37,7 @@ This is a bit of magic. This number is a percentage of the chord. What this perc
 In the picture above, **Cmax** is the Maximum Camber, **X-Cmax** is the Maximum Camber Position, and the thickness isn't described on the picture :cry:. I would suggest playing with these three inputs in the foil generator in the resource section. 
 
 ##The Math  
-I don't know why exactly the proccess the NACA people used to arrive at these equations but I do know how to use them. To start off, there are some simple equations that define camber and thickness. The camber and thickness equations on their own don't give you a foil shape, but they are the building blocks to get there. The final goal will be to create four equations that describe the upper and lower surfaces of the foil. 
+I don't know how NACA people arrived at these equations but I do know how to use them. To start off, there are some simple equations that define camber and thickness. The camber and thickness equations on their own don't give you a foil shape, but they are the building blocks to get there. The final goal will be to create four equations that describe the upper and lower surfaces of the foil. 
 
 #### Camber Equations  
 The first line is the camber equation, it is piecewise at the Maximum Camber Position.
@@ -56,3 +56,6 @@ This section gets a bit more complicated. The gradient function (derivative of t
 The y functions are fairly straight forward. In the equations above,`yc` is the camber function at a given x, the `yt`  is the thickness distribution at that given x. The x function inputs are decently straight forward: the `xc` is just the x coordinate and the `yt` is the output of the thickness distribution at that same given x. The output of the x function is not so clear. Afterall, an x value is an x value, right? Apparently not :cry:. In the picture below, the x coordinate, in blue, get's mapped to do different adjusted x values on the upper and lower surface of the foil. This is the purpose of the x functions.
 
 ![alt text](img/Adjusted.png)
+ 
+ 
+And that!... Is how to turn 4 Digits into a foil! 
