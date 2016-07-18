@@ -52,4 +52,6 @@ It's not that hard to see why it makes the teardrop shape, but how the exact con
 
 #### Bringing it all together: Upper and Lower Functions 
 This section gets a bit more complicated. The gradient function (derivative of the camber function) is mapped into radiants using arctan. This gets fed into four parametric functions that define upper and lower curves. For both the upper and lower functions there is a an x and y function. 
-![alt text](img/Upper-Lower Equations.png)
+![alt text](img/Upper-Lower Equations.png)  
+  
+The y functions are fairly straight forward but the x functions purpose aren't as straight forward. 
