@@ -54,4 +54,6 @@ It's not that hard to see why it makes the teardrop shape, but how the exact con
 This section gets a bit more complicated. The gradient function (derivative of the camber function) is mapped into radiants using arctan. This gets fed into four parametric functions that define upper and lower curves. For both the upper and lower functions there is a an x and y function. 
 ![alt text](img/Upper-Lower Equations.png)  
   
-The y functions are fairly straight forward. In the equations above,`yc` is the camber function at a given x, the `yt`  is the thickness distribution at that given x. The x function inputs are decently straight forward: the `xc` is just the x coordinate and the `yt` is the output of the thickness distribution at that same given x. The output of the x function is not so clear. Afterall, an x value is an x value, right? Apparently not :cry:.
+The y functions are fairly straight forward. In the equations above,`yc` is the camber function at a given x, the `yt`  is the thickness distribution at that given x. The x function inputs are decently straight forward: the `xc` is just the x coordinate and the `yt` is the output of the thickness distribution at that same given x. The output of the x function is not so clear. Afterall, an x value is an x value, right? Apparently not :cry:. In the picture below, the x coordinate, in blue, get's mapped to do different adjusted x values on the upper and lower surface of the foil. This is the purpose of the x functions
+
+![alt text](img/Adjusted.png)
