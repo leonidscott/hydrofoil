@@ -33,7 +33,8 @@ by way of the `(derivative)` function that is listed in the utilites section.
 
 ## Utility Functions
 #### `(round-double n)`  
-A very simple function that takes a double and rounds it to four decimle places which is the expected accuracy of this model. #### `(derivative individual function x)`  
+A very simple function that takes a double and rounds it to four decimle places which is the expected accuracy of this model.    
+#### `(derivative individual function x)`  
 
 
 ## NACA 4 Digit Functions 
