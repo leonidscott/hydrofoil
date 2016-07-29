@@ -35,7 +35,7 @@ by way of the `(derivative)` function that is listed in the utilites section.
 #### `(round-double n)`  
 A very simple function that takes a double and rounds it to four decimle places which is the expected accuracy of this model.    
 #### `(derivative individual function x)`  
-
+Most of the time, derivatives can only be solved numerically.
 
 ## NACA 4 Digit Functions 
 The equations that create the features of an NACA 4 Digit Foil live in this class. To understand what these functions represent, please see 
