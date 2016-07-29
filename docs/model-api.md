@@ -14,10 +14,17 @@ A very simple function that takes a double and rounds it to four decimle places 
 #### `(coefficient-of-lift individual run-constants)`
 This function gets directly called from `(lift-function)`. This function, on its own, solves for the coefficient of lift. 
 See the equation in the **thin aerofoil theory guide**. Again the *individual* and *run-constants* are hashmaps. 
-## Area Functions  
-Because the 4 Digit NACA Foil is a set of parametric equations, taking the integral is not as simple as finding the integral of the top of the foil minus the integral of the bottom. To find the area properly we must multiply the y value of the upper or lower function at a certain point by the derivative of the x value of the upper or lower function. The integral in mathematica will look like this:  
+## Area Functions 
+Area functions constitute the bulk of the code is this class so it is worthwhile to break it up into its own section.  
 
-#### (area individual) 
+Because the 4 Digit NACA Foil is a set of parametric equations, taking the integral is not as simple as finding the integral of the top of the foil minus the integral of the bottom. To find the area properly, we must multiply the y value of the upper or lower function at a certain point by the derivative of the x value of the upper or lower function. The integral in mathematica will look like this:  
+
+![initial state](img/MMA Integral.png)
+
+`upper[x][2]` is the upper function y coordinate and `upper[x][1]` is the x coordinate. The same goes for the lower functions. 
+Unfortunatly, this integral is not solvable due to the complexity of its parematric equations, but it is possible to approximate using numerical integration. 
+
+#### `(area individual)`
 
 
 
