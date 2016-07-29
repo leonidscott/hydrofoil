@@ -25,10 +25,16 @@ Because the 4 Digit NACA Foil is a set of parametric equations, taking the integ
 Unfortunatly, this integral is not solvable due to the complexity of its parematric equations, but it is possible to approximate using numerical integration. 
 
 #### `(area individual)`
+This function essientally holds the integration equation above but does not do any of the heavy lifting. 
+A technical detail (not important unless you trying to read the source code)to note is that the numerical integration equation only takes in one function. For the subraction element of the integration that is fine, you just do two integrals and subract them. On the other hand, to handle the multiplication sections of the equation, you have to create one function to do the multiplication of two functions (I know, that's kind of stupid). You could use anonymous functions to the multiplcation but I thought it would be cleaner to create functions and call them. Those functions are `(adjusted-upper-function)` and `(adjusted-lower-function)`. 
+#### `(adjusted-upper-function)` 
+A helper function for `(area)`. It multiplies `(upper-surface-y-function)` by the derivative of `(upper-surface-x-function)`
+by way of the `(derivative)` function that is listed in the utilites section. 
 
 ## Utility Functions
 #### `(round-double n)`  
-A very simple function that takes a double and rounds it to four decimle places which is the expected accuracy of this model.
+A very simple function that takes a double and rounds it to four decimle places which is the expected accuracy of this model. #### `(derivative individual function x)`  
+
 
 ## NACA 4 Digit Functions 
 The equations that create the features of an NACA 4 Digit Foil live in this class. To understand what these functions represent, please see 
