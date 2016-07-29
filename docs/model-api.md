@@ -16,6 +16,24 @@ This function gets directly called from `(lift-function)`. This function, on its
 See the equation in the 
 [Thin Aerofoil Theory guide](https://github.com/morrislenny/hydrofoil/blob/master/docs/Thin%20Aerofoil%20Theory.md). Again the *individual* and *run-constants* are hashmaps. 
 
+## NACA 4 Digit Functions 
+The equations that create the features of an NACA 4 Digit Foil live in this class. To understand what these functions represent, please see 
+[NACA 4 Digit Design](https://github.com/morrislenny/hydrofoil/blob/master/docs/NACA-4%20Digit%20Design.md). 
+#### `(thickness-function individual x)`  
+This function computes the thickness function for an individual foil, individual, at a point x.   
+#### `(camber-function individual x)`   
+This function computes the hight of the camber position for an individual foil, individual, at a point x.  
+#### `(gradient-function individual x)` 
+This function computes the gradient-function (the derivative of the camber-function) for an individual foil, individual, at a point x.  
+#### `(upper-surface-x-function individual x)`  
+This function computes the upper surface x function for an individual foil, individual, at a point x.   
+#### `(lower-surface-x-function individual x)`  
+This function computes the lower surface x function for an individual foil, individual, at a point x. 
+#### `(upper-surface-y-function individual x)`
+This function computes the upper surface y function for an individual foil, individual, at a point x. 
+#### `(lower-surface-y-function individual x)`  
+This function computes the lower surface y function for an individual foil, individual, at a point x. 
+
 ## Area Functions 
 Because the 4 Digit NACA Foil is a set of parametric equations, taking the integral is not as simple as finding the integral of the top of the foil minus the integral of the bottom. To find the area properly, we must multiply the y value of the upper or lower function at a certain point by the derivative of the x value of the upper or lower function. The integral in mathematica will look like this:  
 
