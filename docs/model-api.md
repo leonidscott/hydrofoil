@@ -8,6 +8,7 @@ a lift force for that given foil. The function that starts everything in motion 
 This is the function that takes an NACA 4 Digit Foil, and derives from it, its area and coefficient of lift. The NACA 4 Digit Foil is refered to as an `individual` and is represented as a hashmap of *camber*, *camber posisition*, and *thinkness*. 
 To see more on 4 Digit NACA foils, see the [NACA 4 Digit Guide](https://github.com/morrislenny/hydrofoil/blob/master/docs/NACA-4%20Digit%20Design.md).
 It also recives, from the hashmap of run constants, its *fluid dencity*, *fluid velocity*, and foil *angle of attack*.
+This function will call only two other functions `(coefficient-of-lift)` and `(area)`.
 To get a better understanding of the equation in place, see the **thin aerofoil theory link**. 
 #### `(coefficient-of-lift individual run-constants)`
 This function gets directly called from `(lift-function)`. This function, on its own, solves for the coefficient of lift. 
