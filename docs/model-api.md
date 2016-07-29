@@ -1,7 +1,7 @@
 #model.clj API 
 `model.clj` is a class that will take a four digit NACA foil and the environment that foil will be preforming in and return
 a lift force for that given foil. The function that starts everything in motion is called `(lift-function)`. It takes in an 
-*individual* (the foil) and a set of *run constants*, all of the aspects of the environment that are plugged into the equation of lift. For this model. We are using *thin aerofoil theory* as our method of determining lift. It is the easiest model we have come across, so it is a good starting point for what we are doing. You can read a full discription of what **thin aerofoil theory** is and how we use it here.  
+*individual* (the foil) and a set of *run constants* (all of the aspects of the environment that are plugged into the equation of lift). For this model. We are using *thin aerofoil theory* as our method of determining lift. It is the easiest model we have come across, so it is a good starting point for what we are doing. You can read a full discription of what **thin aerofoil theory** is and how we use it here.  
 
 ##Lift Functions  
 #### `(lift-function individual run-constants)`  
