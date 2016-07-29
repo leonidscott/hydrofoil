@@ -12,9 +12,8 @@ To get a better understanding of the equation in place, see the **thin aerofoil 
 #### `(coefficient-of-lift individual run-constants)`
 This function gets directly called from `(lift-function)`. This function, on its own, solves for the coefficient of lift. 
 See the equation in the **thin aerofoil theory guide**. Again the *individual* and *run-constants* are hashmaps. 
-## Area Functions 
-Area functions constitute the bulk of the code is this class so it is worthwhile to break it up into its own section.  
 
+## Area Functions 
 Because the 4 Digit NACA Foil is a set of parametric equations, taking the integral is not as simple as finding the integral of the top of the foil minus the integral of the bottom. To find the area properly, we must multiply the y value of the upper or lower function at a certain point by the derivative of the x value of the upper or lower function. The integral in mathematica will look like this:  
 
 ![initial state](img/MMA Integral.png)
