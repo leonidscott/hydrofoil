@@ -1,26 +1,21 @@
 (ns hydrofoil.core
-  (:require [hydrofoil.evolution :as evo]
+  (:require [hydrofoil.evolution :refer :all]
             [hydrofoil.model :refer :all]))
+
+;;[hydrofoil.evolution :as evo]
 
 ;(defn -main [& args]
  ; (println (model/atan 1)))
 
-(defn NACA-design
-  [max-camber position-camber thickness]
-  (hash-map :corrected-max-camber (/ max-camber 100)
-            :corrected-position-camber (/ position-camber 10)
-            :corrected-thickness (/ thickness 100)
-            :max-camber max-camber
-            :positon-camber position-camber
-            :thickness thickness))
-
-(derivative (NACA-design 9.5 9 30) upper-surface-x-function 0.5)
 
 (defn run-constants
   [dencity velocity angle-of-attack]
   (hash-map :dencity dencity
             :velocity velocity
             :angle-of-attack angle-of-attack))
+
+(defn -main [& args]
+  (new-indv (NACA-design 50 50 50)))
 
 
 ;;(defn generate-random-design

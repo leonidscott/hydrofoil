@@ -1,7 +1,8 @@
 (ns hydrofoil.expectations.model
   (:require [expectations :refer :all]
             [hydrofoil.model :refer :all]
-            [hydrofoil.core :refer :all]))
+            [hydrofoil.core :refer :all]
+            [hydrofoil.evolution :refer :all]))
 
 ;;; --------- thickness-function tests ------------
 ; thickness 0:
