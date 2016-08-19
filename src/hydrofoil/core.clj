@@ -15,8 +15,9 @@
             :angle-of-attack angle-of-attack))
 
 (defn -main [& args]
-  (new-indv (NACA-design 50 50 50)))
+  (new-indv(NACA-design 50 50 50)))
 
+(new-indv(NACA-design 50 50 50))
 
 ;;(defn generate-random-design
 ;;  [individual]
