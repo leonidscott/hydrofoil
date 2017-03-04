@@ -1,6 +1,7 @@
 (ns hydrofoil.core
   (:require [hydrofoil.evolution :refer :all]
-            [hydrofoil.model :refer :all]))
+            [hydrofoil.model :refer :all]
+            [hydrofoil.utils :refer :all]))
 
 ;;[hydrofoil.evolution :as evo]
 
@@ -17,7 +18,6 @@
 (defn -main [& args]
   (new-indv(NACA-design 50 50 50)))
 
-(new-indv(NACA-design 50 50 50))
 
 ;;(defn generate-random-design
 ;;  [individual]
