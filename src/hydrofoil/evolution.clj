@@ -1,17 +1,6 @@
-(ns hydrofoil.evolution)
+(ns hydrofoil.evolution
+  (:require [hydrofoil.utils :refer :all]))
 
-(defn NACA-design
-  [max-camber position-camber thickness]
-  (hash-map :corrected-max-camber (/ max-camber 100)
-            :corrected-position-camber (/ position-camber 10)
-            :corrected-thickness (/ thickness 100)
-            :max-camber max-camber
-            :positon-camber position-camber
-            :thickness thickness))
-
-(defn rand-double
-  [lower-bound upper-bound]
-  (/ (double (+ (rand-int (* (- upper-bound lower-bound) 100)) (* lower-bound 100)))100))
 
 (defn upper-bound-check
   [exploratory-limit upper-bound]

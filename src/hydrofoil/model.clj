@@ -1,12 +1,7 @@
 (ns hydrofoil.model
+  (require [hydrofoil.utils :refer :all])
   ;;(:require [clojure.algo.generic.math-functions :as trig])
   )
-
-;;---------------- Utilities ---------------
-(defn round-double
-  "Takes a double and returns a double with four points of accuracy"
-  [n]
-  (double (/ (int (+ (* n 10000) 0.5)) 10000)))
 
 
 ;;---------------- NACA Functions ---------------
