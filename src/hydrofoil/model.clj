@@ -201,14 +201,13 @@
 ;;;---------------- Coefficantof lift ----------------
 (defn symetric-coefficient-of-lift
   [individual run-constants]
-  (let [attack-angle (run-constants :angle-of-attack)
+  (let [attack-angle (run-constants :angle-of-attack-radians)
         camber-position (individual :corrected-position-camber)]
-    (* (* 2 (Math/PI))
-       (+ attack-angle (* 2 camber-position)))))
+    (* 2 (Math/PI) attack-angle)))
 
 (defn cambered-coefficient-of-lift
   [individual run-constants]
-  (let [attack-angle (run-constants :angle-of-attack)
+  (let [attack-angle (run-constants :angle-of-attac-radians)
         theta-switch-constant (theta-switch individual)]
     (- (* 2 (Math/PI))
        (* 2 (+ (integral-production individual gradient-forward-polar-function 0 theta-switch-constant (/ theta-switch-constant 90) 90)
@@ -237,4 +236,4 @@
 
 ;;(integral-abstracted (hash-map :corrected-max-camber 0 :corrected-position-camber 0 :corrected-thickness 0.45) upper-surface-y-function left-rule 100)
 
-;(upper-surface-y-function (hash-map :corrected-max-camber 0 :corrected-position-camber 0.5 :corrected-thickness 0.45) 0)
+;;(upper-surface-y-function (hash-map :corrected-max-camber 0 :corrected-position-camber 0.5 :corrected-thickness 0.45) 0)
