@@ -95,7 +95,7 @@
   (let [position-camber (individual :corrected-position-camber)
         max-camber (individual :corrected-max-camber)]
     (* (/ max-camber (Math/pow position-camber 2))
-       (+ (* (-1) 1) (* 2 position-camber) (* 1 (Math/cos theta-not))))))
+       (+ -1 (* 2 position-camber) (* 1 (Math/cos theta-not))))))
 
 (defn gradient-aft-polar-function
   "takes a theta-not and gives a y coordinate. This is used in the coefficient-of-lift calculations.
@@ -104,13 +104,13 @@
   (let [position-camber (individual :corrected-position-camber)
         max-camber (individual :corrected-max-camber)]
     (* (/ max-camber (Math/pow (- position-camber 1) 2))
-       (+ (* (-1) 1) (* 2 position-camber) (* 1 (Math/cos theta-not))))))
+       (+ (* -1 1) (* 2 position-camber) (* 1 (Math/cos theta-not))))))
 
 (defn theta-switch
   "The angle at which the coefficient-of-lift calculation will switch from one integration to another
   arccos(1 - 2P)"
   [individual]
-  (let [position-camber :corrected-position-camber]
+  (let [position-camber (individual :corrected-position-camber)]
     (Math/acos (- 1 (* 2 position-camber)))))
 
 
