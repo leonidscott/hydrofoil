@@ -1,12 +1,7 @@
 (ns hydrofoil.model
+  (require [hydrofoil.utils :refer :all])
   ;;(:require [clojure.algo.generic.math-functions :as trig])
   )
-
-;;---------------- Utilities ---------------
-(defn round-double
-  "Takes a double and returns a double with four points of accuracy"
-  [n]
-  (double (/ (int (+ (* n 10000) 0.5)) 10000)))
 
 
 ;;---------------- NACA Functions ---------------
@@ -93,6 +88,32 @@
        (* (thickness-function individual x)
           (Math/cos (Math/atan (gradient-function individual x)))))))
 
+(defn gradient-forward-polar-function
+  "takes a theta-not and gives a y coordinate. This is used in the coefficient-of-lift calculations.
+  (M(-c + 2P + c*Cos(theta-not)))/P^2"
+  [individual theta-not]
+  (let [position-camber (individual :corrected-position-camber)
+        max-camber (individual :corrected-max-camber)]
+    (* (/ max-camber (Math/pow position-camber 2))
+       (+ (* (-1) 1) (* 2 position-camber) (* 1 (Math/cos theta-not))))))
+
+(defn gradient-aft-polar-function
+  "takes a theta-not and gives a y coordinate. This is used in the coefficient-of-lift calculations.
+  (M (-c + 2P + c*Cos(theta-not)))/(-1 + P)^2"
+  [individual theta-not]
+  (let [position-camber (individual :corrected-position-camber)
+        max-camber (individual :corrected-max-camber)]
+    (* (/ max-camber (Math/pow (- position-camber 1) 2))
+       (+ (* (-1) 1) (* 2 position-camber) (* 1 (Math/cos theta-not))))))
+
+(defn theta-switch
+  "The angle at which the coefficient-of-lift calculation will switch from one integration to another
+  arccos(1 - 2P)"
+  [individual]
+  (let [position-camber :corrected-position-camber]
+    (Math/acos (- 1 (* 2 position-camber)))))
+
+
 ;;;---------------- Derivative -------------------
 (defn derivative
   "takes an individual, a function, and an x and returns a derivative at that point
@@ -178,13 +199,28 @@
      (simpson-integral individual adjusted-lower-function 90)))
 
 ;;;---------------- Coefficantof lift ----------------
-(defn coefficient-of-lift
+(defn symetric-coefficient-of-lift
   [individual run-constants]
   (let [attack-angle (run-constants :angle-of-attack)
         camber-position (individual :corrected-position-camber)]
     (* (* 2 (Math/PI))
        (+ attack-angle (* 2 camber-position)))))
 
+(defn cambered-coefficient-of-lift
+  [individual run-constants]
+  (let [attack-angle (run-constants :angle-of-attack)
+        theta-switch-constant (theta-switch individual)]
+    (- (* 2 (Math/PI))
+       (* 2 (+ (integral-production individual gradient-forward-polar-function 0 theta-switch-constant (/ theta-switch-constant 90) 90)
+               (integral-production individual gradient-aft-polar-function theta-switch-constant (Math/PI) (/ theta-switch-constant 90) 90))))))
+
+
+(defn coefficient-of-lift
+  [individual run-constants]
+  (let [max-camber (individual :max-camber)]
+    (if (== max-camber 0)
+      (symetric-coefficient-of-lift individual run-constants)
+      (cambered-coefficient-of-lift individual run-constants))))
 
 
 
@@ -202,9 +238,3 @@
 ;;(integral-abstracted (hash-map :corrected-max-camber 0 :corrected-position-camber 0 :corrected-thickness 0.45) upper-surface-y-function left-rule 100)
 
 ;(upper-surface-y-function (hash-map :corrected-max-camber 0 :corrected-position-camber 0.5 :corrected-thickness 0.45) 0)
-
-
-
-
-
-
