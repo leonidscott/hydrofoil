@@ -217,3 +217,10 @@
 (expect 0.1367
         (round-double (area (NACA-design 9.5 0 20)))) ;; assymetric -- thick foil
 
+;;;-------- coefficient-of-lift-symetric ---------
+(expect 0.0
+        (round-double (coefficient-of-lift (NACA-design 0 0.5 10) (run-constants 0 0 0))))
+
+(expect 2.1932
+        (round-double (coefficient-of-lift (NACA-design 0 0.5 10) (run-constants 0 0 20))))
+
