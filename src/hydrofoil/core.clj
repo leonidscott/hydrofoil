@@ -18,6 +18,9 @@
 (defn -main [& args]
   (new-indv(NACA-design 50 50 50)))
 
+(+ (Math/PI) 1)
+(+ 1 1)
+
 
 ;;(defn generate-random-design
 ;;  [individual]
