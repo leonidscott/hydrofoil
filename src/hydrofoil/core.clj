@@ -13,7 +13,8 @@
   [dencity velocity angle-of-attack]
   (hash-map :dencity dencity
             :velocity velocity
-            :angle-of-attack angle-of-attack))
+            :angle-of-attack angle-of-attack
+            :angle-of-attack-radians (*(/ (Math/PI) 180) angle-of-attack)))
 
 (defn -main [& args]
   (new-indv(NACA-design 50 50 50)))
