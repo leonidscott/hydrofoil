@@ -207,11 +207,15 @@
 
 (defn cambered-coefficient-of-lift
   [individual run-constants]
-  (let [attack-angle (run-constants :angle-of-attac-radians)
+  (let [attack-angle (run-constants :angle-of-attack-radians)
         theta-switch-constant (theta-switch individual)]
-    (- (* 2 (Math/PI))
+    (+ (* 2 (Math/PI) attack-angle)
        (* 2 (+ (integral-production individual gradient-forward-polar-function 0 theta-switch-constant (/ theta-switch-constant 90) 90)
                (integral-production individual gradient-aft-polar-function theta-switch-constant (Math/PI) (/ theta-switch-constant 90) 90))))))
+
+    ;;(- (* 2 (Math/PI))
+    ;   (* 2 (+ (integral-production individual gradient-forward-polar-function 0 theta-switch-constant (/ theta-switch-constant 90) 90)
+    ;           (integral-production individual gradient-aft-polar-function theta-switch-constant (Math/PI) (/ theta-switch-constant 90) 90))))))
 
 
 (defn coefficient-of-lift

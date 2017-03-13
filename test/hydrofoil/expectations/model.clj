@@ -224,3 +224,6 @@
 (expect 2.1932
         (round-double (coefficient-of-lift (NACA-design 0 0.5 10) (run-constants 0 0 20))))
 
+;;;-------- coefficient-of-lift-assymetric ---------
+(expect 0.228
+        (round-double (coefficient-of-lift (NACA-design 2 4 12) (run-constants 0 0 0))))
