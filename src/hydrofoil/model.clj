@@ -203,20 +203,29 @@
   [individual run-constants]
   (let [attack-angle (run-constants :angle-of-attack-radians)
         camber-position (individual :corrected-position-camber)]
-    (* 2 (Math/PI) attack-angle)))
+    (* 2 Math/PI attack-angle)))
 
-(defn cambered-coefficient-of-lift
+(defn A-0
   [individual run-constants]
   (let [attack-angle (run-constants :angle-of-attack-radians)
         theta-switch-constant (theta-switch individual)]
-    (+ (* 2 (Math/PI) attack-angle)
-       (* 2 (+ (integral-production individual gradient-forward-polar-function 0 theta-switch-constant (/ theta-switch-constant 90) 90)
-               (integral-production individual gradient-aft-polar-function theta-switch-constant (Math/PI) (/ theta-switch-constant 90) 90))))))
+    (- attack-angle
+       (* (/ 1 Math/PI)
+          (+ (integral-production individual gradient-forward-polar-function 0 theta-switch-constant (/ theta-switch-constant 90) 90)
+             (integral-production individual gradient-aft-polar-function theta-switch-constant Math/PI (/ (- Math/PI theta-switch-constant) 90) 90))))))
 
-    ;;(- (* 2 (Math/PI))
-    ;   (* 2 (+ (integral-production individual gradient-forward-polar-function 0 theta-switch-constant (/ theta-switch-constant 90) 90)
-    ;           (integral-production individual gradient-aft-polar-function theta-switch-constant (Math/PI) (/ theta-switch-constant 90) 90))))))
+(defn A-1
+  [individual run-constants]
+  (let [theta-switch-constant (theta-switch individual)]
+    (* (/ 2 Math/PI)
+       (+ (integral-production individual gradient-forward-polar-function 0 theta-switch-constant (/ theta-switch-constant 90) 90)
+          (integral-production individual gradient-aft-polar-function theta-switch-constant Math/PI (/ (- Math/PI theta-switch-constant) 90) 90)))))
 
+
+(defn cambered-coefficient-of-lift
+  [individual run-constants]
+  (+ (* 2 (Math/PI) (A-0 individual run-constants))
+     (* (Math/PI) (A-1 individual run-constants))))
 
 (defn coefficient-of-lift
   [individual run-constants]
