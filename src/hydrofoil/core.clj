@@ -16,12 +16,39 @@
             :angle-of-attack angle-of-attack
             :angle-of-attack-radians (*(/ (Math/PI) 180) angle-of-attack)))
 
+(defn hill-climber [max-tries run-constants]
+  (loop [parent (rand-individual)
+         num-tries 1
+         performance-data {}]
+    (let [child (new-indv parent)
+          parent-score (:lift (lift-function parent run-constants))
+          child-score (:lift (lift-function child run-constants))]
+      (if (>= num-tries max-tries)
+        parent
+        (if (> child-score parent-score)
+
+          (if (mod num-tries 100)
+            (do (print performance-data)
+                (recur child (inc num-tries) (conj parent {:generation num-tries :lift parent :cl parent})))
+            (recur child (inc num-tries) {}))
+
+          (if (mod num-tries 100)
+            (do (print performance-data)
+                (recur parent (inc num-tries) (conj parent {:generation num-tries :lift parent-score :cl parent})))
+            (recur parent (inc num-tries) {}))
+
+        )))))
+
 (defn -main [& args]
-  (new-indv(NACA-design 50 50 50)))
+  (hill-climber 1000 (run-constants 1 5 5)))
 
-(+ (Math/PI) 1)
-(+ 1 1)
+;(lift-function (hill-climber 20 (run-constants 1 5 5)) (run-constants 1 5 5))
 
+  ;;(new-indv(NACA-design 50 50 50)))
+
+;;(new-indv (NACA-design 2 4 12))
+
+;;(NACA-design 2 4 12)
 
 ;;(defn generate-random-design
 ;;  [individual]
