@@ -219,10 +219,10 @@
 
 ;;;-------- coefficient-of-lift-symetric ---------
 (expect 0.0
-        (round-double (coefficient-of-lift (NACA-design 0 0.5 10) (run-constants 0 0 0))))
+        (round-double (:cl (coefficient-of-lift (NACA-design 0 0.5 10) (run-constants 0 0 0)))))
 
 (expect 2.1932
-        (round-double (coefficient-of-lift (NACA-design 0 0.5 10) (run-constants 0 0 20))))
+        (round-double (:cl (coefficient-of-lift (NACA-design 0 0.5 10) (run-constants 0 0 20)))))
 
 ;;;-------- coefficient-of-lift-Components ---------
 ;(expect 0.0882
@@ -239,4 +239,4 @@
         (round-double (A-1 (NACA-design 2 4 12) (run-constants 0 0 0))))
 
 (expect 0.2275
-        (round-double (coefficient-of-lift (NACA-design 2 4 12) (run-constants 0 0 0))))
+        (round-double (:cl (coefficient-of-lift (NACA-design 2 4 12) (run-constants 0 0 0)))))
