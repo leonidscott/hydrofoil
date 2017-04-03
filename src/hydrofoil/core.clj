@@ -16,31 +16,53 @@
             :angle-of-attack angle-of-attack
             :angle-of-attack-radians (*(/ (Math/PI) 180) angle-of-attack)))
 
+
 (defn hill-climber [max-tries run-constants]
   (loop [parent (rand-individual)
          num-tries 1
-         performance-data {}]
+         performance-data '()]
     (let [child (new-indv parent)
-          parent-score (:lift (lift-function parent run-constants))
-          child-score (:lift (lift-function child run-constants))]
+          parent-performance (lift-function parent run-constants)
+          parent-score (:lift parent-performance)
+          child-score (:lift (lift-function child run-constants))
+          cl (:cl parent-performance)]
+
       (if (>= num-tries max-tries)
-        parent
+
+        (do (print performance-data)
+            parent)
+
         (if (> child-score parent-score)
 
-          (if (mod num-tries 100)
-            (do (print performance-data)
-                (recur child (inc num-tries) (conj parent {:generation num-tries :lift parent :cl parent})))
-            (recur child (inc num-tries) {}))
+          (if (= (mod num-tries 250) 0)
+            (do (println performance-data)
+                (println "")
+                (recur child (inc num-tries) '() ))
+            (recur child (inc num-tries) (conj performance-data (conj parent {:lift parent-score :cl cl}))))
 
-          (if (mod num-tries 100)
-            (do (print performance-data)
-                (recur parent (inc num-tries) (conj parent {:generation num-tries :lift parent-score :cl parent})))
-            (recur parent (inc num-tries) {}))
+          (recur parent (inc num-tries) performance-data)
+
+          ;(if (= (mod num-tries 250) 0)
+          ;  (do (println performance-data)
+           ;     (recur parent (inc num-tries) '()))
+           ; (recur parent (inc num-tries) (conj performance-data (conj parent {:lift parent-score :cl cl}))))
 
         )))))
 
 (defn -main [& args]
-  (hill-climber 1000 (run-constants 1 5 5)))
+  (hill-climber 1000 (run-constants 1 50 -10)))
+
+(lift-function (NACA-design 5 5 12) (run-constants 1 1 5))
+
+;(conj performance-data (conj {:generation num-tries} (conj {:lift parent-score :cl cl} parent))
+
+
+
+
+
+
+      ;((conj parent {:generation num-tries :lift parent-score :cl cl}))
+
 
 ;(lift-function (hill-climber 20 (run-constants 1 5 5)) (run-constants 1 5 5))
 
