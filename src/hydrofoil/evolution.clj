@@ -29,9 +29,9 @@
         p-exp-factor 1
         t-exp-factor 10
         ;;; the numerical values of the upper limits
-        m-upper-bound (upper-bound-check (+ m-exp-factor (parent :max-camber)) 100)
-        p-upper-bound (upper-bound-check (+ p-exp-factor (parent :positon-camber)) 10)
-        t-upper-bound (upper-bound-check (+ t-exp-factor (parent :thickness)) 100)
+        m-upper-bound (upper-bound-check (+ m-exp-factor (parent :max-camber)) 9.5)
+        p-upper-bound (upper-bound-check (+ p-exp-factor (parent :positon-camber)) 9)
+        t-upper-bound (upper-bound-check (+ t-exp-factor (parent :thickness)) 40)
         ;;; the numerical value of the lower limits
         m-lower-bound (lower-bound-check (- (parent :max-camber) m-exp-factor) 0)
         ;p-lower-bound (lower-bound-check (- (parent :positon-camber) p-exp-factor) 0)
@@ -47,9 +47,9 @@
 
 (defn rand-individual
   []
-  (let [t-value (rand-double 0 100)]
-    (NACA-design (rand-double 0 100)
-                 (rand-double (p-min t-value) 10)
+  (let [t-value (rand-double 0 40)]
+    (NACA-design (rand-double 0 9.5)
+                 (rand-double (p-min t-value) 9)
                  t-value)))
 
 
