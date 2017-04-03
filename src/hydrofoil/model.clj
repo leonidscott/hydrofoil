@@ -252,9 +252,9 @@
 (defn coefficient-of-lift
   [individual run-constants]
   (let [max-camber (individual :max-camber)]
-    (if (== max-camber 0)
+    (conj individual {:cl (if (== max-camber 0)
       (symetric-coefficient-of-lift individual run-constants)
-      (cambered-coefficient-of-lift individual run-constants))))
+      (cambered-coefficient-of-lift individual run-constants))})))
 
 
 
@@ -263,11 +263,17 @@
   [individual run-constants]
   (let [dencity (run-constants :dencity)
         velocity (run-constants :velocity)
-        angle-of-attack (run-constants :angle-of-attack)]
-    (* (coefficient-of-lift individual run-constants)
-       (/ (* dencity (Math/pow velocity 2)) 2)
-       (area individual))))
+        angle-of-attack (run-constants :angle-of-attack)
+        cl (:cl (coefficient-of-lift individual run-constants))]
+
+    (conj individual
+          { :cl cl
+            :lift (* cl
+                   (/ (* dencity (Math/pow velocity 2)) 2)
+                   (area individual))})))
 ;;; **---------------- LIFT EQUATION ----------------**
+
+(lift-function (NACA-design 2 4 12) (hash-map :dencity 1 :velocity 5 :angle-of-attack 5 :angle-of-attack-radians 0.0872665))
 
 ;;(integral-abstracted (hash-map :corrected-max-camber 0 :corrected-position-camber 0 :corrected-thickness 0.45) upper-surface-y-function left-rule 100)
 

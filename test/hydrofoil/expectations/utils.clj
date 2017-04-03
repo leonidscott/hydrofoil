@@ -7,3 +7,6 @@
 ;;; --------- Utils Tests ------------
 (print "--------- Running Utils Tests ------------")
 (print "--------- Finished Utils Tests ------------")
+
+(expect 2
+        (+ 1 1))
