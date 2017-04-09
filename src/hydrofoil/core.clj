@@ -1,5 +1,6 @@
 (ns hydrofoil.core
-  (:require [hydrofoil.evolution :refer :all]
+  (:require [clojure.data.json :as json]
+            [hydrofoil.evolution :refer :all]
             [hydrofoil.model :refer :all]
             [hydrofoil.utils :refer :all]))
 
@@ -12,7 +13,7 @@
 
 (defn print-content [list]
     (doseq [item list]
-    (println item)))
+    (println (json/write-str item))))
 
 
 (defn hill-climber [max-tries run-constants]
@@ -50,7 +51,6 @@
 (defn -main [& args]
   (hill-climber 100 (run-constants 1 50 -10)))
 
-(lift-function (NACA-design 5 5 12) (run-constants 1 1 5))
 
 
 
