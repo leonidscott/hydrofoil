@@ -15,6 +15,15 @@
     (doseq [item list]
     (println (json/write-str item))))
 
+(defn print-csv-item [item]
+  (do (doseq [element item]
+        (print (key element) "," (val element) ", "))
+      (println "")))
+
+(defn print-content-csv [list]
+  (doseq [item list]
+    (print-csv-item item)))
+
 
 (defn hill-climber [max-tries run-constants]
   (loop [parent (rand-individual)
@@ -28,13 +37,14 @@
 
       (if (>= num-tries max-tries)
 
-        (do (print-content performance-data)
+        (do (print-content-csv performance-data)
+            (println "")
             parent)
 
         (if (> child-score parent-score)
 
           (if (= (mod num-tries 250) 0)
-            (do (print-content performance-data)
+            (do (print-content-csv performance-data)
                 (println "")
                 (recur child (inc num-tries) '() ))
             (recur child (inc num-tries) (conj performance-data (conj parent {:lift parent-score :cl cl}))))
