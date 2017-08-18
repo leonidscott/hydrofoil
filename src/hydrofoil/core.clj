@@ -60,16 +60,5 @@
 
         )))))
 
-(defn -main [angle-of-attack]
-  ;(println (inc  (Integer/parseInt angle-of-attack))))
-  (hill-climber 1000000 (run-constants 1 50 (Integer/parseInt angle-of-attack))))
-
-
-; NACA 2412 in air at 30 m/s with 0 degrees aot: cl = 0.22745, lift = 10.24945
-; NACA 2412 in air at 30 m/s with 4 degrees aot: cl = 0.66611, lift = 30.01527
-; NACA 2412 in air at 30 m/s with 8 degrees aot: cl = 1.10476, lift = 49.78110
-; NACA 2412 in air at 30 m/s with 12 degrees aot: cl = 1.543406, lift = 69.54692
-; NACA 2412 in air at 30 m/s with 16 degrees aot: cl = 1.982055, lift = 89.31274
-(lift-function (NACA-design 2 4 12) (run-constants 1.225 30 16))
 
 
