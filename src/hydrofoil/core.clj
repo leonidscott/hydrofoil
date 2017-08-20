@@ -1,8 +1,8 @@
 (ns hydrofoil.core
   (:require [clojure.data.json :as json]
             [hydrofoil.evolution :refer :all]
-            [hydrofoil.model :refer :all]
-            [hydrofoil.utils :refer :all]))
+            [hydrofoil.utils :refer :all]
+            [hydrofoil.Model.Thin_Aerofoil_Theory :refer :all]))
 
 (defn run-constants
   [dencity velocity angle-of-attack]
@@ -60,5 +60,6 @@
 
         )))))
 
-
-
+(defn -main [angle-of-attack]
+  ;(println (inc  (Integer/parseInt angle-of-attack))))
+  (hill-climber 10000 (run-constants 1 50 (Integer/parseInt angle-of-attack))))
