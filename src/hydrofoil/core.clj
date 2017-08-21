@@ -5,11 +5,13 @@
             [hydrofoil.Model.Thin_Aerofoil_Theory :refer :all]))
 
 (defn run-constants
-  [dencity velocity angle-of-attack]
+  [dencity velocity angle-of-attack span root-chord]
   (hash-map :dencity dencity
             :velocity velocity
             :angle-of-attack angle-of-attack
-            :angle-of-attack-radians (*(/ (Math/PI) 180) angle-of-attack)))
+            :angle-of-attack-radians (*(/ (Math/PI) 180) angle-of-attack)
+            :span span
+            :root-chord root-chord))
 
 (defn print-content [list]
     (doseq [item list]
