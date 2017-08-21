@@ -1,9 +1,8 @@
-(ns hydrofoil.expectations.model
+(ns hydrofoil.expectations.NACA-equations
   (:require [expectations :refer :all]
-            [hydrofoil.model :refer :all]
             [hydrofoil.core :refer :all]
-            [hydrofoil.evolution :refer :all]
-            [hydrofoil.utils :refer :all]))
+            [hydrofoil.utils :refer :all]
+            [hydrofoil.Model.NACA_equations :refer :all]))
 
 ;;; --------- thickness-function tests ------------
 ; thickness 0:
@@ -35,8 +34,6 @@
 ;thickness 40:
 (expect 0.0
         (round-double (thickness-function (hash-map :corrected-thickness 0.4) 0.9999)))
-
-
 ;;; --------- camber-function tests ------------
 ; M = 0| P = 45| x = .5
 (expect 0.0
@@ -166,45 +163,6 @@
 (expect 1.5708
         (round-double (theta-switch (NACA-design 5 5 5))))
 
-;;;-------- riemann-sum ----------
-(expect 0.0681
-        (round-double (integral-abstracted (NACA-design 0 5 20) upper-surface-y-function left-rule 0 1 140)))
-
-(expect 0.0681
-        (round-double (integral-abstracted (NACA-design 0 5 20) upper-surface-y-function right-rule 0 1 140)))
-
-(expect 0.0681
-        (round-double (integral-abstracted (NACA-design 0 5 20) upper-surface-y-function middle-rule 0 1 50)))
-
-(expect 0.0681
-        (round-double (trapazoid-integral (NACA-design 0 5 20) upper-surface-y-function 0 1 140)))
-
-(expect 0.0681
-        (round-double (simpson-integral (NACA-design 0 5 20) upper-surface-y-function 0 1 80)))
-
-
-
-(expect 0.0994
-        (round-double (integral-abstracted (NACA-design 4.75 4.5 20) upper-surface-y-function left-rule 0 1 80)))
-
-(expect 0.0994
-        (round-double (integral-abstracted (NACA-design 4.75 4.5 20) upper-surface-y-function right-rule 0 1 80)))
-
-(expect 0.0994
-        (round-double (integral-abstracted (NACA-design 4.75 4.5 20) upper-surface-y-function middle-rule 0 1 195)))
-
-(expect 0.0994
-        (round-double (trapazoid-integral (NACA-design 4.75 4.5 20) upper-surface-y-function  0 1  80)))
-
-(expect 0.0994
-        (round-double (simpson-integral (NACA-design 4.75 4.5 20) upper-surface-y-function 0 1 50)))
-
-;;;-------- derivative ----------
-(expect 1.0455
-        (round-double(derivative (NACA-design 9.5 9 30) upper-surface-x-function 0.5)))
-(expect 0.4877
-        (round-double (upper-surface-x-function (NACA-design 9.5 9 30) 0.5)))
-
 ;;;-------- area function ---------
 
 (expect 0.0885
@@ -216,27 +174,3 @@
         (round-double (area (NACA-design 3 40 12)))) ;; assymetric -- thin foil
 (expect 0.1367
         (round-double (area (NACA-design 9.5 0 20)))) ;; assymetric -- thick foil
-
-;;;-------- coefficient-of-lift-symetric ---------
-(expect 0.0
-        (round-double (:cl (coefficient-of-lift (NACA-design 0 0.5 10) (run-constants 0 0 0)))))
-
-(expect 2.1932
-        (round-double (:cl (coefficient-of-lift (NACA-design 0 0.5 10) (run-constants 0 0 20)))))
-
-;;;-------- coefficient-of-lift-Components ---------
-;(expect 0.0882
-;        (round-double (integral-production (NACA-design 2 4 12) gradient-forward-polar-function 0 1.369 (/ (theta-switch (NACA-design 2 4 12)) 200) 200)))
-
-(expect 0.0882
-        (round-double (simpson-integral (NACA-design 2 4 12) gradient-forward-polar-function 0 (theta-switch (NACA-design 2 4 12)) 200)))
-
-
-(expect -0.0044
-        (round-double (A-0 (NACA-design 2 4 12) (run-constants 0 0 0))));; should expect -0.0044
-
-(expect 0.0815
-        (round-double (A-1 (NACA-design 2 4 12) (run-constants 0 0 0))))
-
-(expect 0.2275
-        (round-double (:cl (coefficient-of-lift (NACA-design 2 4 12) (run-constants 0 0 0)))))
