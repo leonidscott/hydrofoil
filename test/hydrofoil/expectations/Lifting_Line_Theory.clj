@@ -37,3 +37,4 @@
 
 (Lifting-Line-Theory (NACA-design 2 4 12) (run-constants 1 100 5 2 7))
 
+(Lifting-Line-Theory (NACA-design 2 4 500) (run-constants 1 100 5 2 7))

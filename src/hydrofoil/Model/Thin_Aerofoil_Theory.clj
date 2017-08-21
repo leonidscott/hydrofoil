@@ -39,7 +39,7 @@
       (cambered-coefficient-of-lift individual run-constants))})))
 
 ;;; **---------------- LIFT EQUATION ----------------**
-(defn lift-function
+(defn thin-aerofoil-theory
   [individual run-constants]
   (let [dencity (run-constants :dencity)
         velocity (run-constants :velocity)

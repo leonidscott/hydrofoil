@@ -54,6 +54,6 @@
            :Drag drag
            :CL-3D CL
            :CD-Induced CD
-           :cl-2D cl})))
+           :cl cl})))
 
 

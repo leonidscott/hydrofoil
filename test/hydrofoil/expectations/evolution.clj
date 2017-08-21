@@ -42,3 +42,25 @@
         (round-double (p-min 100)))
 ;;; ---------------------- p-min -----------------------------
 
+;;; ---------------------- thin-aerofoil-scoring -----------------------------
+(expect 541.1701
+        (round-double (:score (thin-aerofoil-scoring (NACA-design 2 4 12) (run-constants 1 100 10 0 0) 1))))
+;;; ---------------------- thin-aerofoil-scoring -----------------------------
+
+
+;;; ---------------------- lift-priority-scoring -----------------------------
+(expect 995544.5847414348
+        (:score (lift-priority-scoring (NACA-design 2 4 12) (run-constants 1 100 5 2 7) 200)))
+(expect 0
+        (:score (lift-priority-scoring (NACA-design 2 4 12) (run-constants 1 100 5 2 7) 200000)))
+;;; ---------------------- lift-priority-scoring -----------------------------
+
+
+;;; ---------------------- drag-priority-scoring -----------------------------
+(expect 0
+        (:score (drag-priority-scoring (NACA-design 2 4 12) (run-constants 1 100 5 2 7) 100)))
+(expect 16731.4673
+        (round-double (:score (drag-priority-scoring (NACA-design 2 4 12) (run-constants 1 100 5 2 7) 20000))))
+
+
+
