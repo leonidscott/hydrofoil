@@ -1,5 +1,7 @@
 (ns hydrofoil.evolution
-  (:require [hydrofoil.utils :refer :all]))
+  (:require [hydrofoil.utils :refer :all]
+            [hydrofoil.Model.Thin_Aerofoil_Theory :as TAT]
+            [hydrofoil.Model.Lifting_Line_Theory :as LLT]))
 
 
 (defn upper-bound-check
@@ -26,7 +28,7 @@
   (let [exploration-factor 30 ;;; Doesn't do anything yet. hopefully will change m, p, and t, exp-factors.
         ;;; how far you can go from the parent value
         m-exp-factor 10
-        p-exp-factor 1
+        p-exp-factor 10
         t-exp-factor 10
         ;;; the numerical values of the upper limits
         m-upper-bound (upper-bound-check (+ m-exp-factor (parent :max-camber)) 9.5)
@@ -51,6 +53,45 @@
     (NACA-design (rand-double 0 9.5)
                  (rand-double (p-min t-value) 9)
                  t-value)))
+
+;;; ------------ SCORING --------------
+(defn thin-aerofoil-scoring
+  "Most rudimentary scoring, uses thin aerofoil theory, and just returns lift"
+  [individual run-constants scoring-arg]
+  (let    [individual-performance (TAT/thin-aerofoil-theory individual run-constants)
+           score (:Lift individual-performance)]
+    (conj individual-performance
+          {:score score})))
+
+(defn lift-priority-scoring
+  "Using LLT: Inputs will include a minimum lift, foils not achieving this lift will recieve a score of 0.
+  If a foil, reaches the lift threashold, the score will be 1,000,000 - drag. Individuals will want a HIGH score. "
+  [individual run-constants min-lift]
+  (let [individual-performance (LLT/Lifting-Line-Theory individual run-constants)]
+    (if (> (:Lift individual-performance) min-lift)
+            (conj individual-performance {:score (- 1000000 (:Drag individual-performance))})
+            (conj individual-performance {:score 0})
+      )))
+
+(defn drag-priority-scoring
+  "Using LLT: Inputs will include a maximum drag, foils not achieving this maximum drag will recieve a score of 0.
+  If a foil, reaches the lift threashold, the score will be simply its lift. Individuals will want a HIGH score."
+  [individual run-constants max-drag]
+  (let [individual-performance (LLT/Lifting-Line-Theory individual run-constants)]
+    (if (< (:Drag individual-performance) max-drag)
+            (conj individual-performance {:score (:Lift individual-performance)})
+            (conj individual-performance {:score 0}))))
+
+(defn linear-combination-scoring
+  "Using LLT: No extra input, lift and drag will be weighted with constants, and summed."
+  [individual run-constants]
+  (let [lift-weight 0.5
+        drag-weight 3
+        individual-performance (LLT/Lifting-Line-Theory individual run-constants)]
+    (conj individual-performance {:score (+ (* lift-weight (:Lift individual-performance))
+                                            (* drag-weight (:Drag individual-performance)))})))
+
+
 
 
 
