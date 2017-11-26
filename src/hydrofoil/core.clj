@@ -2,7 +2,8 @@
   (:require [clojure.data.json :as json]
             [hydrofoil.evolution :refer :all]
             [hydrofoil.utils :refer :all]
-            [hydrofoil.Model.Thin_Aerofoil_Theory :as TAT]))
+            [hydrofoil.Model.Thin_Aerofoil_Theory :as TAT]
+            [hydrofoil.Model.Lifting_Line_Theory :as LLT]))
 
 (defn run-constants
   [dencity velocity angle-of-attack span root-chord]
@@ -67,5 +68,16 @@
 
         )))))
 
-(defn -main [angle-of-attack span root-chord scoring-arg]
-  (hill-climber 10000 (run-constants 1 50 (Integer/parseInt angle-of-attack) (Integer/parseInt span) (Integer/parseInt root-chord)) drag-priority-scoring (Integer/parseInt scoring-arg)))
+
+(defn -main [dencity v-infinity angle-of-attack]
+      (hill-climber 3000000
+                    (run-constants (Double/parseDouble dencity)
+                                   (Double/parseDouble v-infinity)
+                                   (Double/parseDouble angle-of-attack)
+                                   11.24
+                                   2.67)
+                    lift-priority-scoring
+                    27585))
+
+(LLT/Lifting-Line-Theory (NACA-design 0 0 0) (run-constants 0.7708 163.17 2.1 11.24 2.67))
+(LLT/S (run-constants 0.7708 163.17 2.1 11.24 2.67))
