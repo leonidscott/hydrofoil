@@ -48,7 +48,7 @@
 
     (conj individual
           { :cl cl
-            :lift (* cl
+            :Lift (* cl
                    (/ (* dencity (Math/pow velocity 2)) 2)
                    (area individual))})))
 ;;; **---------------- LIFT EQUATION ----------------**
