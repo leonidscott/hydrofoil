@@ -12,6 +12,8 @@ Lift-Priority Scoring, Max Velocity, Run 1: 3,000,000 generations.
 **Standard NACA:** (NACA: 0.04, 7.5, 13)  
 **Generation:** 561
 
+![!LP-MAX-R1-Gif](https://media.giphy.com/media/l0CLV763woTIp5Hfa/giphy.gif)
+
 ### Raw Data  
 ``` CSV
 Run 1: Max Speed| V-infity: 163.17m/s| p = 0.6805kg/m^3| a = 2.1
