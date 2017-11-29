@@ -18,6 +18,10 @@ Lift-Priority Scoring, Max Velocity, Run 1: 3,000,000 generations.
 
 ![Lift-Drag-Score-v-generation](https://docs.google.com/spreadsheets/d/e/2PACX-1vTCY-ZgJswZxZ2wHg70SCysg52iXBS9KCiMRhmkYokfgpuD-i0IVX3sFsi8B1J4ZdYKnEGhSytkkbGJ/pubchart?oid=1017235129&format=image)
 
+![cl-2D, CL-3D, CD-I vs Generation](https://docs.google.com/spreadsheets/d/e/2PACX-1vTCY-ZgJswZxZ2wHg70SCysg52iXBS9KCiMRhmkYokfgpuD-i0IVX3sFsi8B1J4ZdYKnEGhSytkkbGJ/pubchart?oid=521304587&format=image)
+
+**Number of Successful Generations:** 7
+
 ![LP-MAX-R1-Gif](https://media.giphy.com/media/l0CLV763woTIp5Hfa/giphy.gif)
 
 ### Raw Data  
