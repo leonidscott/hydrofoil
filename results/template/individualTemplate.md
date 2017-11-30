@@ -16,8 +16,10 @@ Lift-Priority Scoring, Max Velocity, Run 1: 3,000,000 generations.
 
 ### Progress Over Time  
 
+Score, Lift and Drag vs Generation
 ![score-lift-drag-vs-generation](../imgs/template/LP-Max-Run1-scoreAndGen.png)  
 
+CL-2D, CL-3D, and CD-I vs Generation
 ![cdI,cl-rC,cl-3D-vs-gen](../imgs/template/LP-Max-clAndGen.png)  
 
 **Number of Successful Generations:**  5
