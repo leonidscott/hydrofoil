@@ -12,7 +12,7 @@ Lift-Priority Scoring, Max Velocity, Run 1: 3,000,000 generations.
 **Standard NACA:** (NACA: 0.04, 7.5, 13)  
 **Generation:** 561
 
-![LP-MAX-R1-561](LP-Max-img/LP-Max-Run-Gen561.png)
+![LP-MAX-R1-561](LP-Max-R1-img/LP-Max-Run-Gen561.png)
 
 ### Progress Over Time  
 
