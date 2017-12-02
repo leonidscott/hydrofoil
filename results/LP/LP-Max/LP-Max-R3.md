@@ -1,5 +1,5 @@
 # LP-Max-R3  
-Lift-Priority Scoring, Max Velocity, Run 1: 3,000,000 generations.
+Lift-Priority Scoring, Max Velocity, Run 3: 3,000,000 generations.
 ### Run Constants  
 | V-Infinity (V∞) | Density (ρ) | angle-of-attack (AOT) |
 |-----------------|-------------|----------------------|
