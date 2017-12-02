@@ -10,7 +10,11 @@ Lift-Priority Scoring, Max Velocity, Run 1: 3,000,000 generations.
 | 11.24m | 2.67       | 27585N   |
 ### Highest Scoring Individual  
 **Standard NACA:** (NACA: 0.04, 7.5, 13)  
-**Generation:** 561
+**Generation:** 561    
+
+| Lift         | Drag        | Cl-2D         |CL-3D       |CD-Induced    |Score|
+|--------------|------------ |---------------|------------|--------------|-----|
+| 43040.17898N | 515.2130812N| 0.8031880363  |0.2015709087|0.002412907461|999484.7869|
 
 ![LP-MAX-R1-561](LP-Max-R1-img/LP-Max-Run-Gen561.png)
 
@@ -19,6 +23,8 @@ Lift-Priority Scoring, Max Velocity, Run 1: 3,000,000 generations.
 ![Lift-Drag-Score-v-generation](https://docs.google.com/spreadsheets/d/e/2PACX-1vTCY-ZgJswZxZ2wHg70SCysg52iXBS9KCiMRhmkYokfgpuD-i0IVX3sFsi8B1J4ZdYKnEGhSytkkbGJ/pubchart?oid=1017235129&format=image)
 
 ![cl-2D, CL-3D, CD-I vs Generation](https://docs.google.com/spreadsheets/d/e/2PACX-1vTCY-ZgJswZxZ2wHg70SCysg52iXBS9KCiMRhmkYokfgpuD-i0IVX3sFsi8B1J4ZdYKnEGhSytkkbGJ/pubchart?oid=521304587&format=image)
+
+![C-M, C-P vs Gen](https://docs.google.com/spreadsheets/d/e/2PACX-1vTCY-ZgJswZxZ2wHg70SCysg52iXBS9KCiMRhmkYokfgpuD-i0IVX3sFsi8B1J4ZdYKnEGhSytkkbGJ/pubchart?oid=1671771754&format=image)
 
 **Number of Successful Generations:** 7
 
