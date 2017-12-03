@@ -1,0 +1,34 @@
+Linear Combination 11 LC
+/home/Dogxx000/Documents/C-SCI/DirectedStudy/hydrofoil-LC11
+
+------LC11 Max Speed Tests-----
+Run 1: Max Speed| V-infity: 163.17m/s| p = 0.6805kg/m^3| a = 2.1| date:  Thu Aug 24 01:17:15 CDT 2017
+Run 1: Max Speed: Complete Thu Aug 24 05:15:51 CDT 2017
+
+Run 2: Max Speed| V-infity: 163.17m/s| p = 0.6805kg/m^3| a = 2.1| date:  Thu Aug 24 05:15:51 CDT 2017
+Run 2: Max Speed: Complete Thu Aug 24 09:15:32 CDT 2017
+
+Run 3: Max Speed| V-infity: 163.17m/s| p = 0.6805kg/m^3| a = 2.1| date:  Thu Aug 24 09:15:32 CDT 2017
+Run 3: Max Speed: Complete Thu Aug 24 13:19:55 CDT 2017
+
+------LC11 Max Cruise Tests-----
+Run 1: Cruise Speed | V-infity: 135.833 m/s | p = 0.7708kg/m^3 | a = 2.1 | date:  Thu Aug 24 13:19:55 CDT 2017
+Run 1: Cruise Speed: Complete Thu Aug 24 17:22:43 CDT 2017
+
+Run 2: Cruise Speed | V-infity: 135.833 m/s | p = 0.7708kg/m^3 | a = 2.1 | date:  Thu Aug 24 17:22:43 CDT 2017
+Run 2: Cruise Speed: Complete Thu Aug 24 21:26:09 CDT 2017
+
+Run 3: Cruise Speed | V-infity: 135.833 m/s | p = 0.7708kg/m^3 | a = 2.1 | date:  Thu Aug 24 21:26:09 CDT 2017
+Run 3: Cruise Speed: Complete Fri Aug 25 01:30:58 CDT 2017
+
+------LC11 Max Slow Tests-----
+Run 1: Slow Speed | V-infity: 30 m/s | p = 0.7708kg/m^3 | a = 2.1 | date:  Fri Aug 25 01:30:58 CDT 2017
+Run 1: Slow Speed: Complete Fri Aug 25 05:30:36 CDT 2017
+
+Run 2: Slow Speed | V-infity: 30 m/s | p = 0.7708kg/m^3 | a = 2.1 | date:  Fri Aug 25 05:30:36 CDT 2017
+Run 2: Slow Speed: Complete Fri Aug 25 09:32:13 CDT 2017
+
+Run 3: Slow Speed | V-infity: 30 m/s | p = 0.7708kg/m^3 | a = 2.1 | date:  Fri Aug 25 09:32:13 CDT 2017
+Run 3: Slow Speed: Complete Fri Aug 25 13:33:04 CDT 2017
+
+------LC11 Tests Complete-----
