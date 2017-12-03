@@ -1,0 +1,34 @@
+Drag-Priority Model
+/home/Dogxx000/Documents/C-SCI/DirectedStudy/hydrofoil
+
+------DP Max Speed Tests-----
+Run 1: Max Speed| V-infity: 163.17m/s| p = 0.6805kg/m^3| a = 2.1| max-drag = 7759.1N| date:  Sun Nov 26 14:14:59 CST 2017
+Run 1: Max Speed: Complete Sun Nov 26 17:59:02 CST 2017
+
+Run 2: Max Speed| V-infity: 163.17m/s| p = 0.6805kg/m^3| a = 2.1| max-drag = 7759.1N| date:  Sun Nov 26 17:59:02 CST 2017
+Run 2: Max Speed: Complete Sun Nov 26 21:41:14 CST 2017
+
+Run 3: Max Speed| V-infity: 163.17m/s| p = 0.6805kg/m^3| a = 2.1| max-drag = 7759.1N| date:  Sun Nov 26 21:41:14 CST 2017
+Run 3: Max Speed: Complete Mon Nov 27 01:20:48 CST 2017
+
+------DP Max Cruise Tests-----
+Run 1: Cruise Speed | V-infity: 135.833 m/s | p = 0.7708kg/m^3 | a = 2.1| max-drag = 7759.1N| date:  Mon Nov 27 01:20:48 CST 2017
+Run 1: Cruise Speed: Complete Mon Nov 27 05:02:05 CST 2017
+
+Run 2: Cruise Speed | V-infity: 135.833 m/s | p = 0.7708kg/m^3 | a = 2.1| max-drag = 7759.1N| date:  Mon Nov 27 05:02:05 CST 2017
+Run 2: Cruise Speed: Complete Mon Nov 27 08:42:27 CST 2017
+
+Run 3: Cruise Speed | V-infity: 135.833 m/s | p = 0.7708kg/m^3 | a = 2.1| max-drag = 7759.1N| date:  Mon Nov 27 08:42:27 CST 2017
+Run 3: Cruise Speed: Complete Mon Nov 27 12:21:06 CST 2017
+
+------DP Max Slow Tests-----
+Run 1: Slow Speed | V-infity: 30 m/s | p = 0.7708kg/m^3 | a = 2.1| max-drag = 7759.1N| date:  Mon Nov 27 12:21:06 CST 2017
+Run 1: Slow Speed: Complete Mon Nov 27 16:07:08 CST 2017
+
+Run 2: Slow Speed | V-infity: 30 m/s | p = 0.7708kg/m^3 | a = 2.1| max-drag = 7759.1N| date:  Mon Nov 27 16:07:08 CST 2017
+Run 2: Slow Speed: Complete Mon Nov 27 19:54:27 CST 2017
+
+Run 3: Slow Speed | V-infity: 30 m/s | p = 0.7708kg/m^3 | a = 2.1| max-drag = 7759.1N| date:  Mon Nov 27 19:54:27 CST 2017
+Run 3: Slow Speed: Complete Mon Nov 27 23:35:52 CST 2017
+
+------DP Tests Complete-----
