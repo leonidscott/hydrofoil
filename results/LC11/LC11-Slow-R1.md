@@ -24,9 +24,7 @@ Linear Combination Scoring (Lift: 1, Drag: 1). Slow Velocity, Run 1: 3,000,000 g
 
 ![cl-2D, CL-3D, CD-I vs Generation](https://docs.google.com/spreadsheets/d/e/2PACX-1vTnfQlO8sMVKv5APWqf5tG9tjN-NFp9RvM9YKOJGsmFnDpcOknf-9w64yE2MpEUjpHPiuo9VRJqJf7Z/pubchart?oid=878117547&format=image)
 
-![C-M, C-P vs Gen](https://docs.google.com/spreadsheets/d/e/2PACX-1vTnfQlO8sMVKv5APWqf5tG9tjN-NFp9RvM9YKOJGsmFnDpcOknf-9w64yE2MpEUjpHPiuo9VRJqJf7Z/pubchart?oid=1576530774&format=image)
-
- [comment]: <> (![C-M, C-P vs Gen (Linear)])  
+![C-M, C-P vs Gen](https://docs.google.com/spreadsheets/d/e/2PACX-1vTnfQlO8sMVKv5APWqf5tG9tjN-NFp9RvM9YKOJGsmFnDpcOknf-9w64yE2MpEUjpHPiuo9VRJqJf7Z/pubchart?oid=1576530774&format=image) 
 
 **Number of Successful Generations:** 12  
 
