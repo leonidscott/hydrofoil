@@ -1,4 +1,4 @@
-# LC27-Slow-R2  
+# LC12-Slow-R2  
 Linear Combination Scoring (Lift: 1, Drag: 2). Slow Velocity, Run2: 3,000,000 generations.  
 ### Run Constants  
 | V-Infinity (V∞) | Density (ρ) | angle-of-attack (AOT) |
@@ -46,5 +46,5 @@ Run 2: Slow Speed | V-infity: 30 m/s | p = 0.7708kg/m^3 | a = 2.1
 :thickness , 35.18000000000001 , :generation , 37 , :positon-camber , 4.99 , :CD-Induced , 1.2239603621263062 , :Lift , 37116.145713405305 , :corrected-thickness , 0.35180000000000006 , :score , 17102.83109068191 , :cl-2D , 1.1857818049784696 , :Drag , 10006.657311361698 , :corrected-position-camber , 0.499 , :corrected-max-camber , 0.0761 , :max-camber , 7.61 , :CL-3D , 4.539846797444731 ,
 :thickness , 27.310000000000006 , :generation , 17 , :positon-camber , 6.68 , :CD-Induced , 1.2271843160487768 , :Lift , 37164.99617181603 , :corrected-thickness , 0.27310000000000006 , :score , 17098.96578624924 , :cl-2D , 1.187087615077567 , :Drag , 10033.015192783394 , :corrected-position-camber , 0.6679999999999999 , :corrected-max-camber , 0.060599999999999994 , :max-camber , 6.06 , :CL-3D , 4.545821922094851 ,
 :thickness , 37.09 , :generation , 2 , :positon-camber , 6.36 , :CD-Induced , 1.4518659969077727 , :Lift , 40424.295633957205 , :corrected-thickness , 0.3709 , :score , 16684.43290207021 , :cl-2D , 1.2742111814085972 , :Drag , 11869.931365943497 , :corrected-position-camber , 0.636 , :corrected-max-camber , 0.0696 , :max-camber , 6.96 , :CL-3D , 4.944481856759641 ,
-:thickness , 29.93 , :generation , 1 , :positon-camber , 7.25 , :CD-Induced , 0.03962341194341597 , :Lift , 6678.133999754467 , :corrected-thickness , 0.2993 , :score , 6030.240624946365 , :cl-2D , 0.37215048225957087 , :Drag , 323.9466874040512 , :corrected-position-camber , 0.725 , :corrected-max-camber , 0.008100000000000001 , :max-camber , 0.81 , :CL-3D , 0.8168333394795945 , 
+:thickness , 29.93 , :generation , 1 , :positon-camber , 7.25 , :CD-Induced , 0.03962341194341597 , :Lift , 6678.133999754467 , :corrected-thickness , 0.2993 , :score , 6030.240624946365 , :cl-2D , 0.37215048225957087 , :Drag , 323.9466874040512 , :corrected-position-camber , 0.725 , :corrected-max-camber , 0.008100000000000001 , :max-camber , 0.81 , :CL-3D , 0.8168333394795945 ,
 ```

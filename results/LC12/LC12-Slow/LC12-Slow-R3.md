@@ -1,4 +1,4 @@
-# LC27-Slow-R3  
+# LC12-Slow-R3  
 Linear Combination Scoring (Lift: 1, Drag: 2). Slow Velocity, Run3: 3,000,000 generations.  
 ### Run Constants  
 | V-Infinity (V∞) | Density (ρ) | angle-of-attack (AOT) |
