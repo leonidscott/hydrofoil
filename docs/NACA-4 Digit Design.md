@@ -1,4 +1,4 @@
-#NACA-4 Digit Design   
+# NACA-4 Digit Design   
 This should hopefully be a good guide to 4 Digit NACA designs. 
 The NACA series was a system created by NACA (National Advisory Committee for Aeronautics) to classify foils by a set of numbers.
 Classifying them is helpful because you can standerdize foil shapes. NACA created a bunch of different foil Series:
