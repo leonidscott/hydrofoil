@@ -1,0 +1,51 @@
+# LP-Slow-R2  
+Lift-Priority Scoring, Slow Velocity, Run 2: 3,000,000 generations.  
+### Run Constants  
+| V-Infinity (V∞) | Density (ρ) | angle-of-attack (AOT) |
+|-----------------|-------------|----------------------|
+|30 m/s           | 0.7708kg/m^3| 2.1 degrees          |  
+### Wing Characteristics  
+| Span   | Root-Chord | Min-Lift |
+|--------|------------|----------|
+| 11.24m | 2.67       | 27585N   |  
+### Highest Scoring Individual  
+**Standard NACA:** (NACA: 5.59, 4.974965233, 13)    
+**Generation:** 2844479  
+
+| Lift         | Drag        | Cl-2D         |CL-3D       |CD-Induced    |Score|
+|--------------|------------ |---------------|------------|--------------|-----|
+| 27585.04705N | 5527.270807N| 0.9310082513  |3.374054205 |0.6760659597  |994472.7292|
+
+![LP-Slow-R2-2844479](LP-Slow-R2-img/LP-Slow-Run2-Gen2844479.png)  
+
+### Progress Over Time  
+
+![Lift-Drag-Score-v-generation](https://docs.google.com/spreadsheets/d/e/2PACX-1vSokFuuotxTJ2J3iCpv3-w6nJN15SG6chr3AXztGrnDhcItVk3a6xjtFmtZLspI6_GYRzqM-h-jr1So/pubchart?oid=437884390&format=image)
+
+![cl-2D, CL-3D, CD-I vs Generation](https://docs.google.com/spreadsheets/d/e/2PACX-1vSokFuuotxTJ2J3iCpv3-w6nJN15SG6chr3AXztGrnDhcItVk3a6xjtFmtZLspI6_GYRzqM-h-jr1So/pubchart?oid=1905442087&format=image)
+
+![C-M, C-P vs Gen](https://docs.google.com/spreadsheets/d/e/2PACX-1vSokFuuotxTJ2J3iCpv3-w6nJN15SG6chr3AXztGrnDhcItVk3a6xjtFmtZLspI6_GYRzqM-h-jr1So/pubchart?oid=1509238084&format=image)
+
+![C-M, C-P vs Gen (Linear)](https://docs.google.com/spreadsheets/d/e/2PACX-1vSokFuuotxTJ2J3iCpv3-w6nJN15SG6chr3AXztGrnDhcItVk3a6xjtFmtZLspI6_GYRzqM-h-jr1So/pubchart?oid=2005819348&format=image)
+
+**Number of Successful Generations:** 12  
+
+![LP-Slow-R2-gif](https://media.giphy.com/media/3o6fJ2QWyRGPMpd30c/giphy.gif)
+
+### Raw Data  
+```CSV
+Run 2: Slow Speed | V-infity: 30 m/s | p = 0.7708kg/m^3 | a = 2.1
+
+:thickness , 15.0 , :generation , 2844479 , :positon-camber , 4.97496523275681 , :CD-Induced , 0.676065959679506 , :Lift , 27585.047051922997 , :corrected-thickness , 0.15 , :score , 994472.7291930949 , :cl-2D , 0.9310082513094464 , :Drag , 5527.2708069050705 , :corrected-position-camber , 0.49749652327568106 , :corrected-max-camber , 0.0559 , :max-camber , 5.59 , :CL-3D , 3.374054204954924 ,
+:thickness , 5.74 , :generation , 2655854 , :positon-camber , 4.746888266748601 , :CD-Induced , 0.6760666865658166 , :Lift , 27585.06188123617 , :corrected-thickness , 0.0574 , :score , 994472.7232503353 , :cl-2D , 0.9310086477083246 , :Drag , 5527.276749664689 , :corrected-position-camber , 0.4746888266748601 , :corrected-max-camber , 0.0572 , :max-camber , 5.72 , :CL-3D , 3.3740560187965456 ,
+:thickness , 9.08 , :generation , 460809 , :positon-camber , 7.243717236993426 , :CD-Induced , 0.6760681036769477 , :Lift , 27585.09079190322 , :corrected-thickness , 0.0908 , :score , 994472.7116645472 , :cl-2D , 0.9310094205125568 , :Drag , 5527.288335452839 , :corrected-position-camber , 0.7243717236993426 , :corrected-max-camber , 0.04 , :max-camber , 4.0 , :CL-3D , 3.3740595549934405 ,
+:thickness , 2.72 , :generation , 331629 , :positon-camber , 5.088192889758067 , :CD-Induced , 0.6760769528547829 , :Lift , 27585.271324436788 , :corrected-thickness , 0.027200000000000002 , :score , 994472.6393168692 , :cl-2D , 0.9310142462851947 , :Drag , 5527.360683130774 , :corrected-position-camber , 0.5088192889758066 , :corrected-max-camber , 0.0553 , :max-camber , 5.53 , :CL-3D , 3.374081636759437 ,
+:thickness , 4.6 , :generation , 28191 , :positon-camber , 6.559057507828023 , :CD-Induced , 0.6761376629904238 , :Lift , 27586.509843189906 , :corrected-thickness , 0.046 , :score , 994472.1429727543 , :cl-2D , 0.931047352838303 , :Drag , 5527.857027245735 , :corrected-position-camber , 0.6559057507828023 , :corrected-max-camber , 0.0454 , :max-camber , 4.54 , :CL-3D , 3.3742331256946927 ,
+:thickness , 4.29 , :generation , 26838 , :positon-camber , 1.4008609463134474 , :CD-Induced , 0.6761471245554904 , :Lift , 27586.702859094075 , :corrected-thickness , 0.0429 , :score , 994472.0656184198 , :cl-2D , 0.9310525123009805 , :Drag , 5527.93438158022 , :corrected-position-camber , 0.14008609463134475 , :corrected-max-camber , 0.0733 , :max-camber , 7.33 , :CL-3D , 3.3742567343592658 ,
+:thickness , 3.71 , :generation , 9852 , :positon-camber , 5.080224114270328 , :CD-Induced , 0.6764446209756572 , :Lift , 27592.77109669101 , :corrected-thickness , 0.0371 , :score , 994469.6333952694 , :cl-2D , 0.9312147209310649 , :Drag , 5530.366604730645 , :corrected-position-camber , 0.5080224114270327 , :corrected-max-camber , 0.0553 , :max-camber , 5.53 , :CL-3D , 3.374998968459576 ,
+:thickness , 3.9200000000000013 , :generation , 2435 , :positon-camber , 2.8908037254734937 , :CD-Induced , 0.676955992107459 , :Lift , 27603.198765451405 , :corrected-thickness , 0.03920000000000001 , :score , 994465.4526098181 , :cl-2D , 0.9314934604888986 , :Drag , 5534.54739018188 , :corrected-position-camber , 0.28908037254734936 , :corrected-max-camber , 0.0673 , :max-camber , 6.73 , :CL-3D , 3.3762744246718737 ,
+:thickness , 11.88 , :generation , 369 , :positon-camber , 7.631220340214681 , :CD-Induced , 0.6777908759570376 , :Lift , 27620.214911294453 , :corrected-thickness , 0.1188 , :score , 994458.6269013752 , :cl-2D , 0.9319483150759887 , :Drag , 5541.373098624766 , :corrected-position-camber , 0.7631220340214682 , :corrected-max-camber , 0.0369 , :max-camber , 3.69 , :CL-3D , 3.3783557478730195 ,
+:thickness , 20.61 , :generation , 14 , :positon-camber , 4.41 , :CD-Induced , 0.8939130343527663 , :Lift , 31719.536256741718 , :corrected-thickness , 0.2061 , :score , 992691.6902885744 , :cl-2D , 1.041526308537705 , :Drag , 7308.30971142556 , :corrected-position-camber , 0.441 , :corrected-max-camber , 0.06860000000000001 , :max-camber , 6.86 , :CL-3D , 3.8797626295445737 ,
+:thickness , 10.96 , :generation , 8 , :positon-camber , 6.802477748758718 , :CD-Induced , 0.9704352272150418 , :Lift , 33049.3156441805 , :corrected-thickness , 0.1096 , :score , 992066.0725117401 , :cl-2D , 1.0770723281694967 , :Drag , 7933.927488259823 , :corrected-position-camber , 0.6802477748758717 , :corrected-max-camber , 0.0526 , :max-camber , 5.26 , :CL-3D , 4.042414073473774 ,
+:thickness , 8.26 , :generation , 5 , :positon-camber , 3.8198338345247373 , :CD-Induced , 1.222909398224888 , :Lift , 37100.207245262114 , :corrected-thickness , 0.08259999999999999 , :score , 990001.934989446 , :cl-2D , 1.1853557575401725 , :Drag , 9998.065010553986 , :corrected-position-camber , 0.38198338345247373 , :corrected-max-camber , 0.08529999999999999 , :max-camber , 8.53 , :CL-3D , 4.53789728996853 , 
+```

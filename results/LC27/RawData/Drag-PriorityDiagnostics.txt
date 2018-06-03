@@ -1,0 +1,19 @@
+/home/Dogxx000/Documents/C-SCI/DirectedStudy/hydrofoil
+
+Run 1: Max Speed| V-infity: 163.17m/s| p = 0.6805kg/m^3| a = 2.1| max-drag = 7759.1N| date:  Sun Nov 26 14:12:00 CST 2017
+Run 1: Max Speed: Complete Sun Nov 26 14:12:03 CST 2017
+
+Run 2: Max Speed| V-infity: 163.17m/s| p = 0.6805kg/m^3| a = 2.1| max-drag = 7759.1N| date:  Sun Nov 26 14:12:03 CST 2017
+Run 2: Max Speed: Complete Sun Nov 26 14:12:05 CST 2017
+
+Run 3: Max Speed| V-infity: 163.17m/s| p = 0.6805kg/m^3| a = 2.1| max-drag = 7759.1N| date:  Sun Nov 26 14:12:05 CST 2017
+Run 3: Max Speed: Complete Sun Nov 26 14:12:07 CST 2017
+
+------LC27 Max Cruise Tests-----
+Run 1: Cruise Speed | V-infity: 135.833 m/s | p = 0.7708kg/m^3 | a = 2.1| max-drag = 7759.1N| date:  Sun Nov 26 14:12:07 CST 2017
+Run 1: Cruise Speed: Complete Sun Nov 26 14:12:10 CST 2017
+
+Run 2: Cruise Speed | V-infity: 135.833 m/s | p = 0.7708kg/m^3 | a = 2.1| max-drag = 7759.1N| date:  Sun Nov 26 14:12:10 CST 2017
+Run 2: Cruise Speed: Complete Sun Nov 26 14:12:10 CST 2017
+
+Run 3: Cruise Speed | V-infity: 135.833 m/s | p = 0.7708kg/m^3 | a = 2.1| max-drag = 7759.1N| date:  Sun Nov 26 14:12:10 CST 2017
