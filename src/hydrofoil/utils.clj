@@ -2,12 +2,12 @@
 
 (defn NACA-design
   [max-camber position-camber thickness]
-  (hash-map :corrected-max-camber (/ max-camber 100)
-            :corrected-position-camber (/ position-camber 10)
-            :corrected-thickness (/ thickness 100)
-            :max-camber max-camber
-            :positon-camber position-camber
-            :thickness thickness))
+  (hash-map :C-M (/ max-camber 100)
+            :C-P (/ position-camber 10)
+            :C-XX (/ thickness 100)
+            :M max-camber
+            :P position-camber
+            :XX thickness))
 
 (defn rand-double
   "Takes a double and returns a double with four points of accuracy"
