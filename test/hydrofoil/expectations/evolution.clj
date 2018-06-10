@@ -10,7 +10,7 @@
 
 (expect true
   (let [child (new-indv (NACA-design 2 4 12))]
-    (and (<= (child :P) 5) (>= (child :P 3)))))
+    (and (<= (child :P) 9) (>= (child :P 0)))))
 
 (expect true
   (let [child (new-indv (NACA-design 2 4 12))]
