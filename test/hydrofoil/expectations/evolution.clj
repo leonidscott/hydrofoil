@@ -6,24 +6,24 @@
 
 (expect true
   (let [child (new-indv (NACA-design 2 4 12))]
-    (and (<= (child :max-camber) 22) (>= (child :max-camber 2)))))
+    (and (<= (child :M) 22) (>= (child :M 2)))))
 
 (expect true
   (let [child (new-indv (NACA-design 2 4 12))]
-    (and (<= (child :positon-camber) 5) (>= (child :positon-camber 3)))))
+    (and (<= (child :P) 9) (>= (child :P 0)))))
 
 (expect true
   (let [child (new-indv (NACA-design 2 4 12))]
-    (and (<= (child :thickness) 22) (> (child :thickness 2)))))
+    (and (<= (child :XX) 22) (> (child :XX 2)))))
 
 (expect nil
-        (some #(and (> (% :max-camber) 100) (< (% :max-camber) 0)) (take 100 (iterate new-indv (NACA-design 2 4 12)))))
+        (some #(and (> (% :M) 100) (< (% :M) 0)) (take 100 (iterate new-indv (NACA-design 2 4 12)))))
 
 (expect nil
-        (some #(and (> (% :positon-camber) 10) (< (% :positon-camber) 0)) (take 100 (iterate new-indv (NACA-design 2 4 12)))))
+        (some #(and (> (% :P) 10) (< (% :P) 0)) (take 100 (iterate new-indv (NACA-design 2 4 12)))))
 
 (expect nil
-        (some #(and (> (% :thickness) 100) (< (% :thickness) 0)) (take 100 (iterate new-indv (NACA-design 2 4 12)))))
+        (some #(and (> (% :XX) 100) (< (% :XX) 0)) (take 100 (iterate new-indv (NACA-design 2 4 12)))))
 
 ;;; ---------------------- p-min -----------------------------
 (expect 0.0100

@@ -6,7 +6,7 @@
 (defn symetric-coefficient-of-lift
   [individual run-constants]
   (let [attack-angle (run-constants :angle-of-attack-radians)
-        camber-position (individual :corrected-position-camber)]
+        camber-position (individual :C-P)]
     (* 2 Math/PI attack-angle)))
 
 (defn A-0
@@ -33,7 +33,7 @@
 
 (defn coefficient-of-lift
   [individual run-constants]
-  (let [max-camber (individual :max-camber)]
+  (let [max-camber (individual :M)]
     (conj individual {:cl (if (== max-camber 0)
       (symetric-coefficient-of-lift individual run-constants)
       (cambered-coefficient-of-lift individual run-constants))})))

@@ -2,19 +2,35 @@
 
 (defn NACA-design
   [max-camber position-camber thickness]
-  (hash-map :corrected-max-camber (/ max-camber 100)
-            :corrected-position-camber (/ position-camber 10)
-            :corrected-thickness (/ thickness 100)
-            :max-camber max-camber
-            :positon-camber position-camber
-            :thickness thickness))
+  {:C-M (/ max-camber 100)
+   :C-P (/ position-camber 10)
+   :C-XX (/ thickness 100)
+   :M max-camber
+   :P position-camber
+   :XX thickness})
 
-(defn rand-double
-  "Takes a double and returns a double with four points of accuracy"
-  [lower-bound upper-bound]
-  (/ (double (+ (rand-int (* (- upper-bound lower-bound) 100)) (* lower-bound 100)))100))
+(defn round-double-2
+  "Takes a POSITIVE double and returns a double with four points of accuracy"
+  [n]
+  (double (/ (int (+ (* n 10000)
+                     0.5))
+             10000)))
 
 (defn round-double
-   "Takes a double and returns a double with four points of accuracy"
-   [n]
-   (double (/ (int (+ (* n 10000) 0.5)) 10000)))
+  "Takes a POSITIVE double and returns a double with four points of accuracy
+   Only used for clean results during testing, or presentation."
+  [n]
+  (-> n
+      (* 10000)
+      (+ 0.5)
+      (int)
+      (/ 10000)
+      (double)))
+
+(defn rand-double
+  "Produces a random double with four digits of accuarcy between the upper and lower bound.
+   Used when creating new individuals in evolution.clj"
+  [lower-bound upper-bound]
+  (-> (- upper-bound lower-bound)
+      (rand)
+      (+ lower-bound)))

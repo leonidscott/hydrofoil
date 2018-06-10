@@ -31,16 +31,16 @@
         p-exp-factor 10
         t-exp-factor 10
         ;;; the numerical values of the upper limits
-        m-upper-bound (upper-bound-check (+ m-exp-factor (parent :max-camber)) 9.5)
-        p-upper-bound (upper-bound-check (+ p-exp-factor (parent :positon-camber)) 9)
-        t-upper-bound (upper-bound-check (+ t-exp-factor (parent :thickness)) 40)
+        m-upper-bound (upper-bound-check (+ m-exp-factor (parent :M)) 9.5)
+        p-upper-bound (upper-bound-check (+ p-exp-factor (parent :P)) 9)
+        t-upper-bound (upper-bound-check (+ t-exp-factor (parent :XX)) 40)
         ;;; the numerical value of the lower limits
-        m-lower-bound (lower-bound-check (- (parent :max-camber) m-exp-factor) 0)
-        ;p-lower-bound (lower-bound-check (- (parent :positon-camber) p-exp-factor) 0)
-        t-lower-bound (lower-bound-check (- (parent :thickness) t-exp-factor) 0)
+        m-lower-bound (lower-bound-check (- (parent :M) m-exp-factor) 0)
+        ;p-lower-bound (lower-bound-check (- (parent :P) p-exp-factor) 0)
+        t-lower-bound (lower-bound-check (- (parent :XX) t-exp-factor) 0)
 
         t-value (rand-double t-lower-bound t-upper-bound)
-        p-lower-bound (lower-bound-check (- (parent :positon-camber) p-exp-factor) (p-min t-value))]
+        p-lower-bound (lower-bound-check (- (parent :P) p-exp-factor) (p-min t-value))]
 
     (NACA-design (rand-double m-lower-bound m-upper-bound)
                  (rand-double p-lower-bound p-upper-bound)
