@@ -9,16 +9,28 @@
    :P position-camber
    :XX thickness})
 
-(defn round-double
-   "Takes a double and returns a double with four points of accuracy"
-   [n]
+(defn round-double-2
+  "Takes a POSITIVE double and returns a double with four points of accuracy"
+  [n]
   (double (/ (int (+ (* n 10000)
                      0.5))
              10000)))
 
+(defn round-double
+  "Takes a POSITIVE double and returns a double with four points of accuracy
+   Only used for clean results during testing, or presentation."
+  [n]
+  (-> n
+      (* 10000)
+      (+ 0.5)
+      (int)
+      (/ 10000)
+      (double)))
+
 (defn rand-double
+  "Produces a random double with four digits of accuarcy between the upper and lower bound.
+   Used when creating new individuals in evolution.clj"
   [lower-bound upper-bound]
-  (let [diff (- upper-bound lower-bound)
-        r (rand diff)
-        r' (+ lower-bound r)]
-    (round-double r')))
+  (-> (- upper-bound lower-bound)
+      (rand)
+      (+ lower-bound)))
