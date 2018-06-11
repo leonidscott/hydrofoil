@@ -1,5 +1,7 @@
 # hydro-evolution
 
+[![Build Status](https://travis-ci.org/morrislenny/hydrofoil.svg?branch=master)](https://travis-ci.org/morrislenny/hydrofoil)
+
 A Clojure library designed to ... well, that part is up to you.
 
 ## Usage
