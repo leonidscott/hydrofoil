@@ -1,6 +1,8 @@
 # hydro-evolution
 
-[![Build Status](https://travis-ci.org/morrislenny/hydrofoil.svg?branch=master)](https://travis-ci.org/morrislenny/hydrofoil)
+[![Build Status](https://travis-ci.org/morrislenny/hydrofoil.svg?branch=master)](https://travis-ci.org/morrislenny/hydrofoil)  
+
+[![](https://codescene.io/projects/3590/status.svg) Get more details at **codescene.io**.](https://codescene.io/projects/3590/jobs/latest-successful/results)
 
 A Clojure library designed to ... well, that part is up to you.
 
